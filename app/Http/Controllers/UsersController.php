@@ -30,6 +30,9 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        // $data  = $request([
+        //     'passowrd' '!=' 'cpassword' => 'passwords must match'
+        // ]);
         $user = User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),

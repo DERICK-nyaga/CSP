@@ -25,9 +25,7 @@
         <div class="f-groups">
         <input class="inputs" type="password" name="password" value="">
         </div>
-        <div class="f-groups">
-        <input class="inputs" type="password" name="cpassword" value="">
-        </div>
         <button class="btn btn-success" type="submit">Register Now</button>
     </form>
+</div>
 @endsection

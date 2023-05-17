@@ -12,6 +12,6 @@ class Company extends Model
       'CompanyName',
       'description',
       'address',
-      'pricing',  
+      'location',  
     ];
 }

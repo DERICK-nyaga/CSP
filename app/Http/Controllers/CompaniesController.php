@@ -32,7 +32,7 @@ class CompaniesController extends Controller
             'CompanyName' => $request->input('CompanyName'),
             'description' => $request->input('description'),
             'address' => $request->input('address'),
-            'pricing' => $request->input('pricing'),
+            'location' => $request->input('location'),
         ]);
         
         $company->save();

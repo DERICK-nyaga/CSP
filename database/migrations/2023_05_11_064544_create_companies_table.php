@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('CompanyName');
             $table->string('description');
             $table->string('address');
-            $table->numeric('pricing');
+            $table->string('location');
             $table->timestamps();
         });
     }

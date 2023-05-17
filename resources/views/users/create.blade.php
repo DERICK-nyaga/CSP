@@ -31,5 +31,5 @@
         </div> --}}
         <button id="bottom-center" class="btn btn-success" type="submit">Register Now</button>
     </form>
-
+</div>
 @endsection
