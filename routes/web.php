@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 // route to create new user
-Route::get('/', function () {
-    return view('users/register');
-});
+Route::get('/', [UsersController::class, 'create']);
+Route::post('/users/create',[UsersController::class, 'create']);
+Route::post('/users', [UsersController::class, 'store']);
+// Route::post('/', [UsersController::class, 'create'] );
