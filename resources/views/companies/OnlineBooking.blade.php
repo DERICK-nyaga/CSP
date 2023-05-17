@@ -10,7 +10,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Mobile number</label>
-    <input type="text" name="contact" class="form-control" id="inputPassword4">
+    <input type="text" name="SenderContact" class="form-control" id="inputPassword4">
   </div>
   <div class="col-12">
     <label for="inputAddress" class="form-label">Receipient Name</label>
@@ -18,7 +18,7 @@
   </div>
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Recipient contact</label>
-    <input type="text" name="receipient" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <input type="text" name="ReceipientContact" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Your town</label>
