@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+// use Validator;
 
 class UsersController extends Controller
 {
@@ -30,9 +32,13 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        // $data  = $request([
-        //     'passowrd' '!=' 'cpassword' => 'passwords must match'
-        // ]);
+        $validator = Validator::make($request->all(),[
+            'fname' => 'required|min:2|max:100',
+            'lname' => 'required|min:2|max:100',
+            'email'=> 'required|email|max:150|unique:users',
+            'mobile'=> 'required',
+            'password' => 'required|min:6|max:16|confirmed',
+        ]);
         $user = User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
@@ -40,10 +46,8 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
         ]);
-
         $user->save();
-        //temporary redirect
-        return redirect('users.show');
+        return redirect('/');  
     }
 
     /**

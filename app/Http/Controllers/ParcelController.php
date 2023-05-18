@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Parcels;
 use Illuminate\Http\Request;
 
 class ParcelController extends Controller
@@ -19,7 +20,7 @@ class ParcelController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.OnlineBooking');
     }
 
     /**
@@ -27,7 +28,31 @@ class ParcelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Parcels::make($request->all(),[
+            'sender' => 'required',
+            'SenderContact' => 'required',
+            'receipient' => 'required',
+            'ReceipientContact' => 'required',
+            'town' => 'required',
+            'weight' => 'required',
+            'PickupStation' => 'required',
+            'DeliveryAddress' => 'required',
+            'info' => 'required',
+        ]);
+        $parcel = Parcels::create([
+        'sender' => $request->input( 'sender'),
+        'SenderContact' => $request->input('SenderContact'),
+        'receipient' => $request->input('receipient'),
+        'ReceipientContact' => $request->input('ReceipientContact'),
+        'town' => $request->input('town'),
+        'weight' => $request->input('weight'),
+        'PickupStation' => $request->input('PickupStation'),
+        'DeliveryAddress' => $request->input('DelliveryAddress'),
+        'info' => $request->input('info'),
+
+        ]);
+        $parcel->save();
+        return redirect('/users/parcel');  
     }
 
     /**

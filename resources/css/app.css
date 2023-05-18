@@ -15,11 +15,30 @@ body{
     position: relative;
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    height: 490px;
+    height: 550px;
     width: 70%;
     border-radius: 8px;
 }
-
+.online-booking{
+    margin: 5% 7%;
+    position: relative;
+    background-color: #ffa500;
+    width: 85%;
+    height: max-content;
+    border-radius: 20px;
+}
+.form-control{
+    margin: auto;
+    width: 90%;
+}
+.form-label{
+    margin-left: 2%;
+}
+#button{
+    float: right;
+    margin-right: 2%;
+    margin-bottom: 1%;
+}
 .form-contain{
     background: grey;
     text-align: center;

@@ -12,7 +12,7 @@
         @csrf
 
         <div class="f-groups">
-        <input class="inputs" type="text" name="fname" value="" placeholder="Kindly fill in your first name">
+        <input class="inputs" type="text" name="fname" value="" placeholder="Kindly fill in your first name" >
         </div>
         <div class="f-groups">
         <input class="inputs" type="text" name="lname" value="" placeholder="Kindly fill in your last name">
@@ -26,9 +26,9 @@
         <div class="f-groups">
         <input class="inputs" type="password" name="password" placeholder="Kindly set a strong password" value="">
         </div>
-        {{-- <div class="f-groups">
-        <input class="inputs" type="password" name="cpassword" value="">
-        </div> --}}
+        <div class="f-groups">
+        <input class="inputs" type="password" name="cpassword" placeholder="Repeat same password as above" value="">
+        </div>
         <button id="bottom-center" class="btn btn-success" type="submit">Register Now</button>
     </form>
 </div>
