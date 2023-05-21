@@ -24,6 +24,19 @@ return new class extends Migration
             $table->string('info');
             $table->timestamps();
         });
+        
+        // relating to the company's table inventory where all company's parcels are stored
+        
+        // Schema::create('inventory', function (Blueprint $table){
+        //     $table->increments('id');
+        //     $table->unsignedInteger('parcel_id');
+        //     $table->unsignedInteger('comapany_id');
+        //     $table->timestamps();
+        //     $table->foreignId('parcel_id')
+        //     ->references('id')
+        //     ->on('parcels')
+        //     ->onDelete('cascade');
+        // });
     }
 
     /**

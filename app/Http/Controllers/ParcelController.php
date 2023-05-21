@@ -20,7 +20,7 @@ class ParcelController extends Controller
      */
     public function create()
     {
-        return view('users.OnlineBooking');
+        return view('parcels.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class ParcelController extends Controller
      */
     public function store(Request $request)
     {
-        Parcels::make($request->all(),[
+        $data = request()->validate([
             'sender' => 'required',
             'SenderContact' => 'required',
             'receipient' => 'required',
@@ -39,20 +39,9 @@ class ParcelController extends Controller
             'DeliveryAddress' => 'required',
             'info' => 'required',
         ]);
-        $parcel = Parcels::create([
-        'sender' => $request->input( 'sender'),
-        'SenderContact' => $request->input('SenderContact'),
-        'receipient' => $request->input('receipient'),
-        'ReceipientContact' => $request->input('ReceipientContact'),
-        'town' => $request->input('town'),
-        'weight' => $request->input('weight'),
-        'PickupStation' => $request->input('PickupStation'),
-        'DeliveryAddress' => $request->input('DelliveryAddress'),
-        'info' => $request->input('info'),
+        Parcels::create($data);
 
-        ]);
-        $parcel->save();
-        return redirect('/users/parcel');  
+        return redirect('/parcel');
     }
 
     /**
@@ -82,8 +71,10 @@ class ParcelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Parcels $parcel)
     {
-        //
+        $parcel->delete();
+
+        return redirect('/parcels');
     }
 }

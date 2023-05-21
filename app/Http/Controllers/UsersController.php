@@ -39,6 +39,7 @@ class UsersController extends Controller
             'mobile'=> 'required',
             'password' => 'required|min:6|max:16|confirmed',
         ]);
+        // $user = User::create([$validator]);
         $user = User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
@@ -47,7 +48,7 @@ class UsersController extends Controller
             'password' => Hash::make($request->newPassword),
         ]);
         $user->save();
-        return redirect('/');  
+        return redirect('/');
     }
 
     /**
@@ -55,7 +56,6 @@ class UsersController extends Controller
      */
     public function show(string $id)
     {
-        return view('/companies');
     }
 
     /**
