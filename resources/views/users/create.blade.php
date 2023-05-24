@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Register')
-
-
 @section('content')
+
 <div class="form-container">
     <div>
         <h1 class="text-center">Register Form</h1>

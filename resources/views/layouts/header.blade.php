@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('/resources/css/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title> @yield('title', 'Courier Service') </title>
 </head>
 <body>

@@ -87,6 +87,9 @@ input[type=text]:focus{
     text-align: center;
 
 }
+.container-fluid{
+    margin-left: 5%;
+}
 .form-container #bottom-center{
     margin-left: 40%;
     padding: 0;
