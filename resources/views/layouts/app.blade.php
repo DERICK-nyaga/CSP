@@ -21,7 +21,11 @@
     <header>
         @include('layouts.header')
     </header>
+    {{-- @section('topnavbar')
+
+    @show --}}
     @yield('content')
+
     <footer>
         @include('layouts.footer')
     </footer>

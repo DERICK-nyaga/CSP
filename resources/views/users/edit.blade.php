@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('content')
+@include('navbar', ['sectionName'=>'client-navbar'])
 
+@section('content')
 
 <div class="form-container">
     <div>

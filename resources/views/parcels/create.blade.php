@@ -3,6 +3,8 @@
 @section('title', 'Send Parcel')
 
 @section('content')
+
+@auth
 <div class="online-booking">
     <div>
         <h1 class="text-center">Send Parcel form</h1>
@@ -49,6 +51,12 @@
   </div>
 </form>
 </div>
+@endauth
+
+@guest
+    {{ route('/') }}
+@endguest
+
 
 @endsection
 

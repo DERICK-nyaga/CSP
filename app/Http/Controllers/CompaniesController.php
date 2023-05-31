@@ -12,7 +12,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        return view('companies/index');
+        return view('companies/customers');
     }
 
     /**
@@ -34,7 +34,7 @@ class CompaniesController extends Controller
             'address' => $request->input('address'),
             'location' => $request->input('location'),
         ]);
-        
+
         $company->save();
         return redirect('/companies');
     }
@@ -52,7 +52,6 @@ class CompaniesController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**

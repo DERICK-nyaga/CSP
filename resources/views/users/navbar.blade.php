@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('client-navbar')
 
 {{-- navbar for a client --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

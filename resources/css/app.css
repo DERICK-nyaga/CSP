@@ -5,19 +5,24 @@
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background: hsla(0, 1%, 30%, 0.2);
 }
 ::placeholder{
     font-size: 20px;
     color: red;
 }
 .form-container{
-    margin: 5% 15%;
+    margin: 5% 25%;
     position: relative;
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
     height: 550px;
-    width: 70%;
+    width: 50%;
     border-radius: 8px;
+}
+.register{
+    margin: auto;
+    margin-top: 9px;
 }
 .online-booking{
     margin: 5% 7%;
@@ -76,7 +81,8 @@ input[type=text]:focus{
 }
 .btn{
     margin-top: 6px;
-    cursor: pointer;
+    display: block;
+    margin: auto;
     border-radius: 8px;
     font-size: 20px;
     color: #eee;
@@ -84,16 +90,14 @@ input[type=text]:focus{
     height: 50px;
     width: 200px;
     outline: 0;
+    padding: 8px 20px;
+    cursor: pointer;
     text-align: center;
-
 }
 .container-fluid{
     margin-left: 5%;
 }
-.form-container #bottom-center{
-    margin-left: 40%;
-    padding: 0;
-}
+
 .btn:hover{
     background: green;
 }
@@ -119,21 +123,24 @@ input[type=text]:focus{
     margin: 5%;
 }
 .card-title{
-    color: rgba(212, 23, 23, 0.842);
+    color: rgba(219, 125, 125, 0.842);
 }
-#link{
+#readme{
     position: relative;
+    float: left;
+    margin-bottom: 12px;
     /* background-color: #ffa500; */
     width: fit-content;
 }
-#link:hover{
+#readme:hover{
     background-color: #ff0000;
 }
-#float-right{
+#visitme{
     float: right;
+    margin-bottom: 12px;
     width: fit-content;
 }
-#float-right:hover{
+#visitme:hover{
     background-color: #ff0000;
 }
 .bi{
@@ -144,3 +151,101 @@ input[type=text]:focus{
 i:hover{
     color: #ffa500;
 }
+ul{
+    overflow:hidden;
+}
+#hidden{
+    overflow: hidden;
+}
+.table{
+    margin: 0 10%;
+    width: fit-content;
+    overflow: hidden;
+    background-color: aliceblue;
+}
+
+.inline{
+    display: flex;
+    margin-left: 4px;
+}
+#success{
+    width: fit-content;
+}
+#reject{
+    width: fit-content;
+}
+#success:hover{
+    background: #ffa500;
+}
+#reject:hover{
+    background: green;
+}
+.notifications{
+    margin: 5% 2%;
+    padding: 15px;
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+    background-color: #ffa500;
+    height: fit-content;
+    float: right;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.inner{
+    opacity: 0.6;
+    background: #FFCC70;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    border-radius: 9px;
+}
+.notif{
+    margin: 10px;
+    padding: 4px;
+    color: #ff0000;
+    font-size: 2.2rem;
+}
+hr{
+    margin: 10px;
+    color: #fff;
+}
+hr:last-child{
+    display: none;
+}
+.sidebar{
+    margin-top: 5%;
+    position: absolute;
+    display: block;
+    background-color: #ffa500;
+    width: max-content;
+    height: 80%;
+}
+a{
+    text-decoration: none;
+    font-size: 2rem;
+}
+a:hover{
+    color: red;
+    cursor: pointer;
+}
+.two{
+    list-style: none;
+    padding: 6%;
+}
+.navbar{
+    height: 16vh;
+}
+.nav-link{
+    text-transform: capitalize;
+    font-size: 27px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav-link:hover{
+    color: #ffa500;
+    cursor: pointer;
+}
+/* @keyframes right{
+    0% {color: #FFCC70; left: 0px; top: 0px;}
+    25% {color: #ff0000; left: 200px; top: 0px;}
+    100%{color: #FFCC70; left: 0px; top: 0px;}
+} */

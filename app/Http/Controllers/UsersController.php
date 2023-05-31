@@ -47,8 +47,11 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
         ]);
+
+        auth()->attempt($request->only('email', 'password'));
         $user->save();
-        return redirect('/');
+
+        return redirect()->route('/');
     }
 
     /**
