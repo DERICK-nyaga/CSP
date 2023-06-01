@@ -43,9 +43,6 @@
           <div class="mb-3">
             <textarea name="about" placeholder="Company where abouts" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
-        {{-- <div class="form-group">
-            <textarea name="description" class="" placeholder="Company description " value=""></textarea>
-        </div> --}}
         <button id="bottom-center" class="btn btn-success" type="submit">Register Now</button>
     </form>
 </div>
