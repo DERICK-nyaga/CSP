@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('CompanyName');
-            $table->string('address');
-            $table->string('location');
-            $table->decimal('pricing');
-            $table->string('description');
-            $table->string('about');
+        Schema::create('parcel_categories', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('parcel_categories');
     }
 };

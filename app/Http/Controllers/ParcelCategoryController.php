@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Company;
 
-class CompaniesController extends Controller
+class ParcelCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('companies/customers');
+        //
     }
 
     /**
@@ -20,7 +19,7 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('companies.create');
+        //
     }
 
     /**
@@ -28,17 +27,7 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $company = Company::create([
-            'CompanyName' => $request->input('CompanyName'),
-            'address' => $request->input('address'),
-            'location' => $request->input('location'),
-            'pricing' => $request->input('pricing'),
-            'description' => $request->input('description'),
-            'about' => $request->input('about'),
-        ]);
-
-        $company->save();
-        return redirect('/companies');
+        //
     }
 
     /**
@@ -54,6 +43,7 @@ class CompaniesController extends Controller
      */
     public function edit(string $id)
     {
+        //
     }
 
     /**

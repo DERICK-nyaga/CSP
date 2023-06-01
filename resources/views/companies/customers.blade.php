@@ -24,28 +24,18 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Parcel Owner</th>
-        <th scope="col">Tracking number</th>
-        <th scope="col">Contact address</th>
+        <th scope="col">Mobile number</th>
+        <th scope="col"> Email address</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>6474747</td>
-        <td>07979999</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>9439849</td>
-        <td>097944</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Thornton</td>
-        <td>74374739</td>
-        <td>9329392</td>
+        <th scope="row"></th>
+        @foreach ($customers as $customer )
+            <td>{{ $customer->lname }}</td>
+            <td>{{ $customer->mobile }}</td>
+            <td>{{ $customer->email }}</td>
+        @endforeach
       </tr>
     </tbody>
   </table>

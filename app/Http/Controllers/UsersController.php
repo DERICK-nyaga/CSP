@@ -39,6 +39,7 @@ class UsersController extends Controller
             'mobile'=> 'required',
             'password' => 'required|min:6|max:16|confirmed',
         ]);
+
         // $user = User::create([$validator]);
         $user = User::create([
             'fname' => $request->input('fname'),
@@ -92,7 +93,6 @@ class UsersController extends Controller
      */
     public function destroy(string $id)
     {
-        //
 
    }
 }

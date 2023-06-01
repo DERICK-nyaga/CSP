@@ -34,8 +34,14 @@
         <div class="form-group">
             <input type="number" name="location" class="" placeholder="Company's Location" value="">
         </div>
+        <div class="form-group">
+            <input type="number" name="pricing" class="" placeholder="Company's charges per kilogram" value="">
+        </div>
         <div class="mb-3">
             <textarea name="description" placeholder="Company description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <textarea name="about" placeholder="Company where abouts" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         {{-- <div class="form-group">
             <textarea name="description" class="" placeholder="Company description " value=""></textarea>

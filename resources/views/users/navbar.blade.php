@@ -49,3 +49,15 @@
 
 
 @endsection
+
+
+{{--
+
+each company:
+  has id
+
+  has pricing
+  has about page
+
+  every parcel must have a category such as fragile, bulk, standard,
+ --}}
