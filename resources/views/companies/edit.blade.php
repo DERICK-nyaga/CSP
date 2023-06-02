@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Edit_Company_profile')
+
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -35,7 +37,7 @@
             <input type="text" name="address" class="" placeholder="Company phone number" value="{{ old('address') }}">
         </div>
         <div class="form-group">
-            <input type="number" name="location" class="" placeholder="Company's Location" value="{{ old('location') }}">
+            <input type="text" name="location" class="" placeholder="Company's Location" value="{{ old('location') }}">
         </div>
         <div class="mb-3">
             <textarea name="description" placeholder="Company description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{ old('description') }}"></textarea>

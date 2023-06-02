@@ -8,22 +8,23 @@ use App\Models\Navbar;
 class CompanyMenuController extends Controller
 {
     public function home(){
-        return view('home');
+        return redirect()->route('companies');
+        // return view('home');
     }
     public function inhouse(){
-        return view('inhouse');
+        return redirect()->route('our_inhouse');
     }
     public function customers(){
-        return view('customer');
+        return redirect()->route('our_customers');
     }
     public function requests(){
-        return view('parcels');
+        return redirect()->route('dropoffs');
     }
     public function mus(){
-        return view('movables');
+        return redirect()->route('mu');
     }
     public function profile(){
-        return view('profile');
+        return redirect()->route('company_profile');
     }
 
 }

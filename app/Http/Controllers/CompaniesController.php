@@ -15,6 +15,22 @@ class CompaniesController extends Controller
         return view('companies/customers');
     }
 
+    public function our_inhouse()
+    {
+        return view('companies/inhouse');
+    }
+    public function our_customers(){
+        return view('companies/customers');
+    }
+    public function dropoff_requests(){
+        return view('companies/dropoffs');
+    }
+    public function movable_units(){
+        return view('companies/movables');
+    }
+    public function company_profile(){
+        return view('companies.edit');
+    }
     /**
      * Show the form for creating a new resource.
      */

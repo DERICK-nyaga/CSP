@@ -11,7 +11,6 @@ class InhouseParcelsController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Our Customers')
+
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -30,12 +32,14 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row"></th>
-        @foreach ($customers as $customer )
+
+
+        {{-- @foreach ($customers as $customer )
+        <th scope="row">{{ $customer->id }}</th>
             <td>{{ $customer->lname }}</td>
             <td>{{ $customer->mobile }}</td>
             <td>{{ $customer->email }}</td>
-        @endforeach
+        @endforeach --}}
       </tr>
     </tbody>
   </table>

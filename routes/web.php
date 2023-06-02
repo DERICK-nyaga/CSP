@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ParcelController;
 use App\Http\Controllers\CompaniesController;
@@ -19,7 +20,12 @@ Route::get('/parcels/create', [ParcelController::class, 'create'])->name('parcel
 Route::post('/parcels', [ParcelController::class, 'store']);
 // company routes
 // Route::get('/companies', [CompaniesController::class, 'index']);
-Route::get('/companies', [CompaniesController::class, 'index'])->name('comapanies');
+Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');
+Route::get('/company/ourinhouse', [CompaniesController::class, 'our_inhouse'])->name('our_inhouse');
+Route::get('/company/ourcustomers', [CompaniesController::class, 'our_customers'])->name('our_customers');
+Route::get('/companies/dropoffs', [CompaniesController::class, 'dropoff_requests'])->name('dropoffs');
+Route::get('/companies/movable_units', [CompaniesController::class, 'movable_units'])->name('mu');
+Route::get('/company/profile', [CompaniesController::class, 'company_profile'])->name('company_profile');
 // menus routes
 Route::get('/home',[CompanyMenuController::class, 'home'])->name('home');
 Route::get('/companies/inhouse', [CompanyMenuController::class, 'inhouse'])->name('inhouse');

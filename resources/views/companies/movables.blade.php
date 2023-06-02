@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Transit Parcels')
+
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">

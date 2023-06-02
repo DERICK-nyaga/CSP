@@ -20,19 +20,26 @@
   </nav>
 
 <div class="items">
-    <div class="items-3">
-        <div class="item">
-            <div class="item-body">
-                <i class="bi bi-eye"></i>
-                <h5 class="card-title">G4S</h5>
-                <p class="card-text">This is the leading company in the world...</p>
-                <a href="#" id="readme" class="btn btn-info">Read Me</a>
-                <a href="#" id="visitme"class="btn btn-warning">Visit Me</a>
-                {{-- read me link to take me to description of all services offered by the company --}}
-                {{-- visit me link to take me to a page to request parcel services  --}}
+{{-- 
+    @foreach($companies as $company)
+        <div class="items-3">
+            <div class="item">
+                <div class="item-body">
+                    <i class="bi bi-eye"></i>
+                    <form action="">
+                        @csrf
+                        <input type="hidden" value="{{ $company->id }}">
+                    </form>
+                    <h5 class="card-title">{{ $company->CompanyName }}</h5>
+                    <p class="card-text">{{ $company->address }}</p>
+                    <p class="card-text">{{ $company->location }}</p>
+                    <a href="#" id="visitme"class="btn btn-warning">Visit Me</a>
+                </div>
             </div>
         </div>
-    </div>
+    @endforeach --}}
+
+
     <div class="items-3">
         <div class="item">
             <div class="item-body">

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title', 'Register your company')
 @section('content')
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
