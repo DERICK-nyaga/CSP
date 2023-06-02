@@ -47,7 +47,7 @@
     <input type="text" name="info" class="form-control move" placeholder="Additional information about package">
   </div>
   <div class="col-12">
-    <button type="submit" id="button" class="btn btn-primary">Send Request</button>
+    <button type="submit" id="button" class="btn btn-primary">Next</button>
   </div>
 </form>
 </div>

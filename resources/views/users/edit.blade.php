@@ -1,32 +1,31 @@
 @extends('layouts.app')
 
-@include('navbar', ['sectionName'=>'client-navbar'])
-
 @section('content')
 
 <div class="form-container">
     <div>
         <h1 class="text-center">Register Form</h1>
     </div>
-    <form action="/users" method="GET">
+    <form action="/users/{{ $user->id }}" method="GET">
         @csrf
-
+            @method('PUT')
+            
         <div class="f-groups">
-        <input class="inputs" type="text" name="fname" value="{{ $fname }}">
+        <input class="inputs" type="text" name="fname" value="{{ $user->fname }}">
         </div>
         <div class="f-groups">
-        <input class="inputs" type="text" name="lname" value="{{ $lname }}">
+        <input class="inputs" type="text" name="lname" value="{{ $user->lname }}">
         </div>
         <div class="f-groups">
-        <input class="inputs" type="email" name="email" value="{{ $email }}">
+        <input class="inputs" type="email" name="email" value="{{ $user->email }}">
         </div>
         <div class="f-groups">
-        <input class="inputs" type="text" name="mobile" value="{{ $mobile }}">
+        <input class="inputs" type="text" name="mobile" value="{{ $user->mobile }}">
         </div>
-        <div class="f-groups">
+        {{-- <div class="f-groups">
         <input class="inputs" type="password" name="password" value="">
-        </div>
-        <button class="btn btn-success" type="submit">Register Now</button>
+        </div> --}}
+        <button class="btn btn-success" type="submit">Edit Profile</button>
     </form>
 </div>
 @endsection

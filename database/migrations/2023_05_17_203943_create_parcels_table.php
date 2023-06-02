@@ -22,11 +22,15 @@ return new class extends Migration
             $table->string('PickupStation');
             $table->string('DeliveryAddress');
             $table->string('info');
+            $table->integer('tracking_number');
+            $table->string('category');
+            $table->string('payment');
+            $table->integer('price');
             $table->timestamps();
         });
-        
+
         // relating to the company's table inventory where all company's parcels are stored
-        
+
         // Schema::create('inventory', function (Blueprint $table){
         //     $table->increments('id');
         //     $table->unsignedInteger('parcel_id');

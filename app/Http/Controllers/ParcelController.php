@@ -38,6 +38,11 @@ class ParcelController extends Controller
             'PickupStation' => 'required',
             'DeliveryAddress' => 'required',
             'info' => 'required',
+            'tracking_number',
+            'category',
+            'payment',
+            'price',
+
         ]);
         Parcels::create($data);
 

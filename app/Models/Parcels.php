@@ -18,5 +18,9 @@ class Parcels extends Model
         'PickupStation',
         'DeliveryAddress',
         'info',
+        'tracking_number',
+        'category',
+        'payment',
+        'price',
     ];
 }

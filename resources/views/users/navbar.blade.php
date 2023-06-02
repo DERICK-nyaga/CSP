@@ -58,6 +58,11 @@ each company:
 
   has pricing
   has about page
-
+  fragile, bulk and standard
   every parcel must have a category such as fragile, bulk, standard,
+  this is chosen from my controller class for parcels where a parcel
+  which is an elctronic or gascooker is termed as fragile and is under 10kilograms
+  while above 10kgs extra charges are added on top, parcels not fragile and
+   are above 10kg and equal to 50kg are said to be standard parcels then those
+    above 50kg are said to be bulk and bulk charges are applied.
  --}}
