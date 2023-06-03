@@ -9,7 +9,7 @@ use App\Http\Controllers\CompanyMenuController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationsController;
 // route to create new user
-Route::get('/', [UsersController::class, 'create'])->name('create');
+Route::get('/', [UsersController::class, 'create'])->name('/');
 // Route::get('/users/create',[UsersController::class, 'create']);
 Route::post('/users', [UsersController::class, 'store']);
 

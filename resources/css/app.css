@@ -157,8 +157,8 @@ ul{
     overflow: hidden;
 }
 .table{
-    margin: 0 10%;
-    width: fit-content;
+    margin: 1% auto;
+    width: 60%;
     overflow: hidden;
     background-color: aliceblue;
 }
@@ -242,6 +242,17 @@ a:hover{
 .nav-link:hover{
     color: #ffa500;
     cursor: pointer;
+}
+.dropoffs{
+    display: flex;
+}
+#success{
+    margin: 5px;
+    width: fit-content;
+}
+#deny{
+
+    width: fit-content;
 }
 /* @keyframes right{
     0% {color: #FFCC70; left: 0px; top: 0px;}

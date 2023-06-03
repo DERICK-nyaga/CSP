@@ -9,7 +9,6 @@ class CompanyMenuController extends Controller
 {
     public function home(){
         return redirect()->route('companies');
-        // return view('home');
     }
     public function inhouse(){
         return redirect()->route('our_inhouse');
