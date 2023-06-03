@@ -26,7 +26,7 @@
   <table class="table table-hover table-responsive table-bordered">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">Order</th>
         <th scope="col">Parcel Owner</th>
         <th scope="col">Mobile number</th>
         <th scope="col"> Email address</th>
