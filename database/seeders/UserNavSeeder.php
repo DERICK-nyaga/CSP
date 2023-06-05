@@ -26,7 +26,7 @@ class UserNavSeeder extends Seeder
             ],
             [
                 'name' => 'Description',
-                'route' => 'about',
+                'route' => 'description',
                 'ordering' => 3,
             ],
             [

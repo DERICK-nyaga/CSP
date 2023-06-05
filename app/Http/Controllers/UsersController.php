@@ -24,10 +24,10 @@ class UsersController extends Controller
      {
          return view('support/prices');
      }
-     public function description(){
-         return view('support/contactus');
+     public function about(){
+         return view('support/description');
      }
-     public function contact_us(){
+     public function contactus(){
          return view('support/contactus');
      }
     /**

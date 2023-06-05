@@ -11,11 +11,22 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationsController;
 // route to create new user
 Route::get('/', [UsersController::class, 'create'])->name('/');
-// Route::get('/users/create',[UsersController::class, 'create']);
 Route::post('/users', [UsersController::class, 'store']);
+
+Route::get('/home', [UserNavController::class, 'home'])->name('home');
+Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
+Route::get('/support/about', [UserNavController::class, 'description'])->name('description');
+Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('contacts');
+
+// user dynamic menu routes
+Route::get('/support', [UsersController::class, 'index'])->name('Homepage');
+Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
+Route::get('/about', [UsersController::class, 'about'])->name('Company_description');
+Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
+
 // route for parcels online booking
 Route::get('/parcels/create', [ParcelController::class, 'create'])->name('parcels');
 Route::post('/parcels', [ParcelController::class, 'store']);
@@ -34,16 +45,7 @@ Route::get('/companies/customers', [CompanyMenuController::class, 'customers'])-
 Route::get('/companies/parcelrequests', [CompanyMenuController::class, 'requests'])->name('requests');
 Route::get('/companies/movableunits', [CompanyMenuController::class, 'mus'])->name('mus');
 Route::get('/companies/Company Profile', [CompanyMenuController::class, 'profile'])->name('profile');
-// user dynamic menu routes
-Route::get('/support/contactus', [UsersController::class, 'index'])->name('okay');
-Route::get('/support/contactus', [UsersController::class, 'prices'])->name('prices');
-Route::get('/support/contactus', [UsersController::class, 'descriptions'])->name('description');
-Route::get('/support/contactus', [UsersController::class, 'contacts'])->name('contactus');
 
-Route::get('/support/contactus', [UserNavController::class, 'home'])->name('homes');
-Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
-Route::get('/support/about', [UserNavController::class, 'description'])->name('about');
-Route::get('/support/contactus', [UserNavController::class, 'contact_us'])->name('contacts');
 //user notifications controller
 Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications');
 

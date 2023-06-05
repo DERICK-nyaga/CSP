@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class UserNavController extends Controller
 {
     public function home(){
-        return redirect()->route('contactus');
+        return redirect()->route('Homepage');
     }
     public function prices(){
-        return redirect()->route('prices');
+        return redirect()->route('Our_prices');
     }
     public function description(){
-        return redirect()->route('description');
+        return redirect()->route('Company_description');
     }
-    public function contact_us(){
+    public function contacts(){
         return redirect()->route('contacts');
     }
 }
