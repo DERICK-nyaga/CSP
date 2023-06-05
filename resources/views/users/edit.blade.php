@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('partials.app')
 
 @section('content')
 
@@ -9,7 +9,7 @@
     <form action="/users/{{ $user->id }}" method="GET">
         @csrf
             @method('PUT')
-            
+
         <div class="f-groups">
         <input class="inputs" type="text" name="fname" value="{{ $user->fname }}">
         </div>

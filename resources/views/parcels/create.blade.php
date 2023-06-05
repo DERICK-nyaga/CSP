@@ -1,15 +1,17 @@
-@extends('layouts.app')
+@extends('partials.app')
 
 @section('title', 'Send Parcel')
 
 @section('content')
 
-@auth
+{{-- @auth --}}
 <div class="online-booking">
     <div>
         <h1 class="text-center">Send Parcel form</h1>
     </div>
 <form action="/parcels" method="POST" class="row g-3">
+    @csrf
+
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Sender name</label>
     <input name="sender" type="text" class="form-control" placeholder="Your own real name">
@@ -51,11 +53,11 @@
   </div>
 </form>
 </div>
-@endauth
+{{-- @endauth --}}
 
-@guest
+{{-- @guest
     {{ route('/') }}
-@endguest
+@endguest --}}
 
 
 @endsection

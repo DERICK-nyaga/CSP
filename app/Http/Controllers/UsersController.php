@@ -14,11 +14,22 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        return view('users/index');
-    }
 
+     public function index()
+     {
+        return view('support/contactus');
+     }
+
+     public function prices()
+     {
+         return view('support/prices');
+     }
+     public function description(){
+         return view('support/contactus');
+     }
+     public function contact_us(){
+         return view('support/contactus');
+     }
     /**
      * Show the form for creating a new resource.
      */

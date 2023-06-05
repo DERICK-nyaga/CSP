@@ -21,7 +21,7 @@
     </div>
   </nav>
 
-<div class="comapny-container">
+<div class="company-container">
     <div class="company">
         <h2  class="text-center">Edit Company Details</h2>
     </div>
@@ -30,22 +30,19 @@
 
         @method('PUT')
 
-        <div class="form-group">
-            <input type="text" name="CompanyName" class="" placeholder="Only a registered by GoK company is allowed" value="{{ old('CompanyName') }}">
-        </div>
-        <div class="form-group">
-            <input type="text" name="address" class="" placeholder="Company phone number" value="{{ old('address') }}">
-        </div>
-        <div class="form-group">
-            <input type="text" name="location" class="" placeholder="Company's Location" value="{{ old('location') }}">
+        <div class="mb-3">
+            <input type="text" name="CompanyName" class="form-control" placeholder="" value="{{ old('CompanyName') }}">
         </div>
         <div class="mb-3">
-            <textarea name="description" placeholder="Company description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{ old('description') }}"></textarea>
+            <input type="text" name="address" class="form-control" placeholder="" value="{{ old('address') }}">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="location" class="form-control" placeholder="" value="{{ old('location') }}">
+        </div>
+        <div class="mb-3">
+            <textarea name="description" placeholder="" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{ old('description') }}"></textarea>
           </div>
-        {{-- <div class="form-group">
-            <textarea name="description" class="" placeholder="Company description " value=""></textarea>
-        </div> --}}
-        <button id="bottom-center" class="btn btn-success" type="submit">Register Now</button>
+          <button id="bottom-center" class="btn btn-success" type="submit">Edit Now</button>
     </form>
 </div>
 

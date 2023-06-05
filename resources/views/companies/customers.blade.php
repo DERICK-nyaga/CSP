@@ -173,4 +173,3 @@
   </table>
 
 @endsection
-{{-- {{ route('menuitem.store') }} --}}

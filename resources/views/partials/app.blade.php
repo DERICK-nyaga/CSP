@@ -21,12 +21,14 @@
     <header>
         @include('layouts.header')
     </header>
+
+    @include('partials.customernavbar')
+
     @yield('content')
-    
+
     <footer>
         @include('layouts.footer')
     </footer>
-
 
 </body>
 </html>

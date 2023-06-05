@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('partials.app')
 
 @section('title', 'Register')
 
@@ -69,7 +69,7 @@
       <div class="register">
         <button id="bottom-center" class="btn btn-success" type="submit">Register Now</button>
     </div>
-    
+
     </form>
 </div>
 @endsection

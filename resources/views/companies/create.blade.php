@@ -19,24 +19,26 @@
       </div>
     </div>
   </nav>
-<div class="comapny-container">
+
+<div class="company-container">
     <div class="company">
         <h2  class="text-center">Register Company</h2>
     </div>
+
     <form action="/companies" method="POST">
         @csrf
 
-        <div class="form-group">
-            <input type="text" name="CompanyName" class="" placeholder="Only a registered by GoK company is allowed" value="">
+        <div class="mb-3">
+            <input type="text" name="CompanyName" class="form-control" placeholder="Only a registered by GoK company is allowed" value="">
         </div>
-                <div class="form-group">
-            <input type="text" name="address" class="" placeholder="Company phone number" value="">
+                <div class="mb-3">
+            <input type="text" name="address" class="form-control" placeholder="Company phone number" value="">
         </div>
-        <div class="form-group">
-            <input type="number" name="location" class="" placeholder="Company's Location" value="">
+        <div class="mb-3">
+            <input type="number" name="location" class="form-control" placeholder="Company's Location" value="">
         </div>
-        <div class="form-group">
-            <input type="number" name="pricing" class="" placeholder="Company's charges per kilogram" value="">
+        <div class="mb-3">
+            <input type="number" name="pricing" class="form-control" placeholder="Company's charges per kilogram" value="">
         </div>
         <div class="mb-3">
             <textarea name="description" placeholder="Company description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

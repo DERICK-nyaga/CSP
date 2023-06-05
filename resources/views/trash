@@ -1,0 +1,77 @@
+/* {{
+    click on a user and display all the packages under the customer
+    if packages are unpaid select the unpaid packages and give a total to be paid
+    when a company is selected display its information in a single page and the pricing list of all its contents
+}
+}
+
+to animate an id */
+#id {
+    height: 350px;
+}
+#content h1 {
+    line-height: 7;
+    position:relative;
+    animation: downwards;
+    animation-duration: 3s;
+    animation-fill-mode: forawards; 
+    /* this will cause the item being animated to settle to the place its intended */
+}
+/* this willm make it to movr fro top to bottom */
+@keyframes downwards {
+    0%   {
+        top: -100px;
+    }
+    100% {
+        top: 400px;
+    }
+}
+
+/* style content in a form  and animate*/
+
+#content {
+    position: relative;
+    animation-name: content;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/* when the content is so huge set the left or right pixes to be negative huge number */
+@keyframes content {
+    0% {
+        left: -1000px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+/* 0112358763 */
+
+/* style up a button with zero opacity then set it to one with a delay of 3seconds */
+
+.btn {
+    display: block;
+    color: blueviolet;
+    text-decoration: none;
+    padding: 2rem 3.5rem;
+    border: #4444 1px solid;
+    margin-top: 30px;
+    opacity: 0;
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+/* rotate the button along the Y axis at an angle */
+.btn:hover {
+    transform: rotateY(180deg);
+}
+
+@keyframes btn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

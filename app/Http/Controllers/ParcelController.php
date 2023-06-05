@@ -12,7 +12,7 @@ class ParcelController extends Controller
      */
     public function index()
     {
-        //
+        return view('users/index');
     }
 
     /**
@@ -46,7 +46,7 @@ class ParcelController extends Controller
         ]);
         Parcels::create($data);
 
-        return redirect('/parcel');
+        return redirect()->route('parcels');
     }
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ParcelController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\CompanyMenuController;
+use App\Http\Controllers\UserNavController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationsController;
 // route to create new user
@@ -33,5 +34,18 @@ Route::get('/companies/customers', [CompanyMenuController::class, 'customers'])-
 Route::get('/companies/parcelrequests', [CompanyMenuController::class, 'requests'])->name('requests');
 Route::get('/companies/movableunits', [CompanyMenuController::class, 'mus'])->name('mus');
 Route::get('/companies/Company Profile', [CompanyMenuController::class, 'profile'])->name('profile');
+// user dynamic menu routes
+Route::get('/support/contactus', [UsersController::class, 'index'])->name('okay');
+Route::get('/support/contactus', [UsersController::class, 'prices'])->name('prices');
+Route::get('/support/contactus', [UsersController::class, 'descriptions'])->name('description');
+Route::get('/support/contactus', [UsersController::class, 'contacts'])->name('contactus');
+
+Route::get('/support/contactus', [UserNavController::class, 'home'])->name('homes');
+Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
+Route::get('/support/about', [UserNavController::class, 'description'])->name('about');
+Route::get('/support/contactus', [UserNavController::class, 'contact_us'])->name('contacts');
 //user notifications controller
 Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications');
+
+
+// have a page where when I click on prices it selects all companies prices and displays them for a user..
