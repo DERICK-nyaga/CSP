@@ -25,3 +25,56 @@ fragile
    }}
 add tracking number in the
 customer form to send parcels
+
+$fragile = [
+    'phones',
+    'tv set',
+    'fridges',
+    'glassware',
+    'electric kettle',
+    'microwave',
+    'laptop',
+    'blender',
+    'tampered glasscooker',
+    'washing machine',
+    'subwoofer',
+    'hometheatre',
+    'iron box'
+];
+
+$initialWeight = 10;
+$standard = 10-45;
+$bulk = 45-100;
+$weight = [
+    $initialWeight = 300;
+    $standard = 20/kilo;
+    $bulk = 36/kilo;
+
+];
+
+if ($fragile && $weight <=10){
+    $price = 300;
+}
+else if ($fragile && $weight >10 && <=45){
+    $price = (($weight - $standard) * 20) + 300;
+}
+else if ($fragile && $weight >45 && <=100){
+        $price = (($standard - $initialWeight) * 15) + (($bulk - $standard) *36)  + 300;
+}
+else if(!$fragile && $weight <=10){
+    $price = 300;
+}
+else if (!$fragile && $weight >10 && <=45){
+        $price = (($weight - $standard) * 20) + 200;
+}
+else if  (!$fragile && $weight >45 && <=100) {
+    $price = (($standard - $initialWeight) * 15) + (($bulk - $standard) *36)  + 200;
+}
+else if (!$fragile && $weight >100 && <=999){
+    $price = ($weight * 43) + 233 ;
+}
+else
+{
+    $error = 'The weight input is too huge, it cannot be accepted';
+    return redirect()->route('route name');
+}

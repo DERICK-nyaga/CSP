@@ -19,16 +19,15 @@
 <body>
 
     <header>
-        @include('partials.header')
+        @include('layouts.header')
     </header>
-
-    @include('partials.customernavbar')
-
+    @extends('layouts.comnavbar')
     @yield('content')
 
     <footer>
-        @include('partials.footer')
+        @include('layouts.footer')
     </footer>
+
 
 </body>
 </html>

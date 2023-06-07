@@ -1,7 +1,3 @@
-@extends('layouts.app')
-
-@section('main-navbar')
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">DNLC&#8482;</a>
@@ -22,5 +18,3 @@
       </div>
     </div>
   </nav>
-
-@endsection

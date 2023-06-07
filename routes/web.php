@@ -39,7 +39,7 @@ Route::get('/companies/dropoffs', [CompaniesController::class, 'dropoff_requests
 Route::get('/companies/movable_units', [CompaniesController::class, 'movable_units'])->name('mu');
 Route::get('/company/profile', [CompaniesController::class, 'company_profile'])->name('company_profile');
 // menus routes
-Route::get('/home',[CompanyMenuController::class, 'home'])->name('home');
+Route::get('/home', [CompanyMenuController::class, 'home'])->name('home');
 Route::get('/companies/inhouse', [CompanyMenuController::class, 'inhouse'])->name('inhouse');
 Route::get('/companies/customers', [CompanyMenuController::class, 'customers'])->name('customers');
 Route::get('/companies/parcelrequests', [CompanyMenuController::class, 'requests'])->name('requests');

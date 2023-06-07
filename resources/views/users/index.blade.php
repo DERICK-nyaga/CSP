@@ -1,7 +1,7 @@
 @extends('partials.app')
 
 @section('title', 'Homepage')
-
+{{-- fetch the list of all the registered companies and their services  --}}
 @section('content')
 <div class="items">
     <div class="items-3">
@@ -77,6 +77,6 @@
 
 
 </div>
-{{-- <i class="fa-light fa-user fa-sm" style="color: #d6dae1;"></i> --}}
+
 @endsection
-{{-- <i class="bi bi-person-fill"></i> --}}
+

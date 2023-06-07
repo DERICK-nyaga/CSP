@@ -17,6 +17,34 @@ body{
     padding-top: 10px;
     color: #353535;
 }
+.contact-page{
+    margin: auto;
+    position: relative;
+
+    animation-name: contact;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes contact {
+    0% {
+        left: -1000px;
+    }
+    25% {
+        top: -300px;
+    }
+    50% {
+        top: -400px;
+    }
+    75% {
+        top: -500px;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
 ::placeholder{
     font-size: 20px;
     color: red;
@@ -291,8 +319,8 @@ a:hover{
 
 .footer {
     background: #cccc;
-    top: 0;
     position: relative;
+
     animation-name: footer;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -310,3 +338,80 @@ a:hover{
     color: #353535;
 }
 
+.inside {
+    background-color: darkgray;
+    width: 75%;
+    padding: 10px;
+    height: fit-content;
+    margin: auto;
+    border-radius: 10px;
+
+    position: relative;
+    animation-name: inside;
+    animation-fill-mode: forwards;
+    animation-duration: 3s;
+}
+#contacts {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+#call {
+    color: #003330;
+}
+#mobile{
+    color: #003450;
+    font-weight: 800;
+    font-size: 27px;
+}
+#mobile:hover{
+    color:#800080;
+}
+#email{
+    padding-left: 20px;
+    color: #ff0000;
+}
+#purple:hover {
+    color: #800080;
+}
+@keyframes inside {
+    0% {
+        left: -3000px;
+    }
+    100% {
+        left: 0;
+        bottom: 10px;
+    }
+}
+.contact-form {
+    width: 60%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 1.5%;
+    background-color: #ccc;
+    border-radius: 8px;
+}
+.form-title {
+    color: #334453;
+    text-align: center;
+}
+#branch {
+    text-align: center;
+}
+#located {
+    display: inline-block;
+    padding: 20px;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+.opening-hrs label {
+    display: block;
+}
+
+.closing-hrs label {
+    display: block;
+}

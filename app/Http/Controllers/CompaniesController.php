@@ -62,7 +62,7 @@ class CompaniesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //display the specified company only
     }
 
     /**
