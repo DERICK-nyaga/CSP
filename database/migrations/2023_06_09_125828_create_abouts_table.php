@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_lists', function (Blueprint $table) {
+        Schema::create('abouts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('branch_id');
+            $table->string('branch');
+            $table->biginteger('mobile');
+            $table->string('email');
+            $table->string('avenue');
+            $table->string('street');
+            $table->string('building');
+            $table->integer('floor');
+            $table->integer('room');
             $table->timestamps();
             $table->foreign('branch_id')
             ->references('id')
@@ -27,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_lists');
+        Schema::dropIfExists('abouts');
     }
 };

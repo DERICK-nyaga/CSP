@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Branches extends Model
+class About extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
+    protected $fillable= [
         'BranchName',
-        'location',
         'mobile',
         'email',
+        'avenue',
+        'street',
+        'building',
+        'floor',
+        'RoomNumber',
     ];
-    
-    public function company(){
-        return $this->belongsToMany(Company::class);
-    }
 }

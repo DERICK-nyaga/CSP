@@ -11,9 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_lists', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('branch_id');
+            $table->string('service1');
+            $table->string('service2');
+            $table->string('service3');
+            $table->string('service4');
+            $table->string('service5');
+            $table->string('service6');
+            $table->string('service7');
+            $table->string('service8');
+            $table->string('service9');
+            $table->string('service10');
             $table->timestamps();
             $table->foreign('branch_id')
             ->references('id')
@@ -27,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_lists');
+        Schema::dropIfExists('services');
     }
 };

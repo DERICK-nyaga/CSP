@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('branches', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->unsignedInteger('companies_id');
+            $table->string('branchname');
             $table->timestamps();
+            $table->foreign('companies_id')
+            ->references('id')
+            ->on('companies')
+            ->onDelete('cascade');
         });
     }
 
