@@ -6,20 +6,14 @@
     <tr>
         <th scope="col">Branch Index</th>
         <th scope="col">Branch name</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
     </tr>
 </thead>
 <tbody>
     <tr>
-        <th scope="row">#</th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        @foreach ($branches as $branch )
+            <th scope="row">{{ $branch->id }}</th>
+            <td><a href="#routename">{{ $branch->branchname }}</a></td>
+        @endforeach
     </tr>
 </tbody>
 </table>
