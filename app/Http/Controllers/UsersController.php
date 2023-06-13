@@ -17,12 +17,14 @@ class UsersController extends Controller
 
      public function index()
      {
-        return view('support/contactus');
+        return view('users/index');
      }
-
+     public function allcompanies(){
+        return view('users/allcompanies');
+     }
      public function prices()
      {
-         return view('support/prices');
+        return view('support/prices');
      }
      public function about(){
          return view('support/abouts');
@@ -62,7 +64,6 @@ class UsersController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
         $user->save();
-
         return redirect()->route('/');
     }
 

@@ -22,7 +22,6 @@
         @include('layouts.header')
     </header>
     @yield('content')
-    
     <footer>
         @include('layouts.footer')
     </footer>

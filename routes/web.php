@@ -19,10 +19,12 @@ Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts
 Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('contacts');
 
 // user dynamic menu routes
-Route::get('/support', [UsersController::class, 'index'])->name('Homepage');
+// Route::get('/support', [UsersController::class, 'index'])->name('Homepage');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
 Route::get('/about', [UsersController::class, 'about'])->name('abouts');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
+Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
+Route::get('/users/home', [UsersController::class, 'index'])->name('companies');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);

@@ -31,6 +31,9 @@
         <div class="mb-3">
             <input type="text" name="CompanyName" class="form-control" placeholder="Only a registered by GoK company is allowed" value="">
         </div>
+        <div class="mb-3">
+            <input type="text" name="branch" class="form-control" placeholder="Branch name for the company" value="">
+        </div>
                 <div class="mb-3">
             <input type="text" name="address" class="form-control" placeholder="Company phone number" value="">
         </div>

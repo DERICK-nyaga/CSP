@@ -12,6 +12,9 @@ class UserNavController extends Controller
     public function prices(){
         return redirect()->route('Our_prices');
     }
+    public function companies(){
+        return redirect()->route('listcompanies');
+    }
     public function abouts(){
         return redirect()->route('abouts');
     }

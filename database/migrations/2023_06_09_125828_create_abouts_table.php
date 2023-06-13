@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('branch_id');
+            $table->unsignedInteger('company_id');
             $table->string('branch');
             $table->biginteger('mobile');
             $table->string('email');
@@ -27,9 +27,9 @@ return new class extends Migration
             $table->string('weekdaysclosing');
             $table->string('weekendsclosing');
             $table->timestamps();
-            $table->foreign('branch_id')
+            $table->foreign('company_id')
             ->references('id')
-            ->on('branches')
+            ->on('companies')
             ->onDelete('cascade');
         });
     }

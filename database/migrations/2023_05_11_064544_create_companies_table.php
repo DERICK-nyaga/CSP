@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('CompanyName');
+            $table->string('branch');
             $table->string('address');
             $table->string('location');
             $table->decimal('pricing');

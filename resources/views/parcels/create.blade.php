@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- @auth --}}
-<div class="online-booking">
+{{-- <div class="online-booking">
     <div>
         <h1 class="text-center">Send Parcel form</h1>
     </div>
@@ -52,13 +52,36 @@
     <button type="submit" id="button" class="btn btn-primary">Next</button>
   </div>
 </form>
-</div>
+</div> --}}
 {{-- @endauth --}}
 
 {{-- @guest
     {{ route('/') }}
 @endguest --}}
+<div class="online-booking">
+    <div>
+        <h1 class="text-center">Register Company</h1>
+    </div>
+<form action="/parcels" method="POST" class="row g-3">
+    @csrf
 
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Company Name</label>
+    <input name="sender" type="text" class="form-control" placeholder="Your own real name">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Branch</label>
+    <input name="sender" type="text" class="form-control" placeholder="Your own real name">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Town</label>
+    <input name="sender" type="text" class="form-control" placeholder="Your own real name">
+  </div>
+  <div class="col-12">
+    <button type="submit" id="button" class="btn btn-primary">Register</button>
+  </div>
+</form>
+</div>
 
 @endsection
 

@@ -1,8 +1,9 @@
-@extends('partials.app')
+@extends('layouts.app')
 
-@section('title', 'Homepage')
-{{-- fetch the list of all the registered companies and their services  --}}
+@section('title', 'List of Companies')
 @section('content')
+@include('layouts.companylist')
+{{-- list the companies based on the order of standard price  --}}
 <table class="table table-hover table-responsive table-bordered">
     <thead>
       <tr>
@@ -54,4 +55,3 @@
   </table>
 
 @endsection
-

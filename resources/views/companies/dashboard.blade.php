@@ -1,27 +1,41 @@
-@extends('layouts.admin')
+@extends('layouts.app')
+@section('title', 'Admindashboard')
 
 @section('content')
-
-    <div class="dashboard">
-        <div class="board">
-                {{-- display all the dropoffs here --}}
-            <h2>pickup requests</h2> {{  }}
-        </div>
-
-        <div class="board">
-            {{-- display total packages that need pickup --}}
-            <h2>parcels for pickup</h2>
-        </div>
-
-        <div class="board">
-            {{-- display total of all paid items --}}
-            <h2>paid parcels</h2>
-        </div>
-
-        <div class="board">
-            {{--  --}}
-            <h2></h2>
-        </div>
-
+@include('layouts.comnavbar')
+<div class="dashboard">
+    <div class="dash-card">
+        <h2>4355 Unpicked parcels</h2>
     </div>
+    <div class="dash-card">
+        <h2>2453 Unpaid Parcels</h2>
+    </div>
+    <div class="dash-card">
+        <h2>234 Dropoffs</h2>
+    </div>
+    <div class="dash-card">
+        <h2>192 Cancelled Dropoffs</h2>
+    </div>
+    <div class="big-dash">
+        <div class="check">
+            <h3>Total complaints this week</h3>
+        </div>
+        <h2>434 Complaints</h2>
+    </div>
+    <div class="big-dash">
+        <div class="check">
+            <h3>Scheduled Dropoffs-Pickups</h3>
+        </div>
+        <h2>392 Schedules</h2>
+        <small>Attendance time is in 3hrs time</small>
+    </div>
+    <div class="big-dash">
+        <div class="check">
+            <h3>Company Branches</h3>
+        </div>
+        <h2>392 Branches</h2>
+        <a href="#" class="">check them&rarr;</a>
+    </div>
+</div>
+
 @endsection

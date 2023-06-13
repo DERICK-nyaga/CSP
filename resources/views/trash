@@ -14,7 +14,7 @@ to animate an id */
     position:relative;
     animation: downwards;
     animation-duration: 3s;
-    animation-fill-mode: forawards; 
+    animation-fill-mode: forawards;
     /* this will cause the item being animated to settle to the place its intended */
 }
 /* this willm make it to movr fro top to bottom */
@@ -75,3 +75,26 @@ to animate an id */
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+
+/* a form to register a company */
+/*
+companyname
+branch-main
+        -sub-branch
+town/city - nairobi
+*/
+
+/* about form which should pop next after the company is successfully registered */
+
+/*
+company location
+weekdays & weekends opening & closing hours for the company
+avenue its located at
+street of its location
+building where it is located at
+floor number & room number
+mobile number for the company
+email for the company
+*/
+
+/* standard price is the price of items below 10kilograms */

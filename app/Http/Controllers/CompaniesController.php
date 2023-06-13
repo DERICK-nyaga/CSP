@@ -12,7 +12,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        return view('companies/customers');
+        return view('companies/dashboard');
     }
 
     public function our_inhouse()

@@ -6,6 +6,50 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background: hsla(0, 1%, 30%, 0.2);
 }
+.dashboard{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: #eee;
+    background-image: url('/public/images/tail.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dash-card{
+    color: #eee;
+    width: 20%;
+    padding: 10px;
+    margin: 1%;
+    background-color: #334453;
+    transition: all .3s ease-in-out;
+}
+.dash-card:hover {
+    box-shadow: 4px 4px #eee;
+    transform: scale(1.1);
+}
+.big-dash {
+    margin: 1%;
+    width: 20%;
+    height: max-content;
+    background-color: aliceblue;
+    border-radius: 7px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+.big-dash:hover {
+    box-shadow: 4px 4px  #888888;
+    margin: 1%;
+    transform: scale(1.1);
+}
+.check {
+    background-color: #afa0a0;
+    height: max-content;
+    text-align: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
 .company-container{
     width: 60%;
     height: fit-content;
