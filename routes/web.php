@@ -15,13 +15,13 @@ Route::post('/users', [UsersController::class, 'store']);
 
 Route::get('/home', [UserNavController::class, 'home'])->name('home');
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
-Route::get('/support/about', [UserNavController::class, 'description'])->name('description');
+Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
 Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('contacts');
 
 // user dynamic menu routes
 Route::get('/support', [UsersController::class, 'index'])->name('Homepage');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
-Route::get('/about', [UsersController::class, 'about'])->name('Company_description');
+Route::get('/about', [UsersController::class, 'about'])->name('abouts');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');

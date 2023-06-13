@@ -25,7 +25,7 @@ class UsersController extends Controller
          return view('support/prices');
      }
      public function about(){
-         return view('support/description');
+         return view('support/abouts');
      }
      public function contactus(){
          return view('support/contactus');

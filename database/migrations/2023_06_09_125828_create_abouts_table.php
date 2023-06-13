@@ -22,6 +22,10 @@ return new class extends Migration
             $table->string('building');
             $table->integer('floor');
             $table->integer('room');
+            $table->string('weekdaysopening');
+            $table->string('weekendsopening');
+            $table->string('weekdaysclosing');
+            $table->string('weekendsclosing');
             $table->timestamps();
             $table->foreign('branch_id')
             ->references('id')

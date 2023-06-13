@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $about = DB::table('about')->get();
-        return redirect()->route('about');
+        $abouts = DB::table('abouts')->get();
+        return view('support.abouts', ['abouts' => $abouts]);
     }
 
     /**
