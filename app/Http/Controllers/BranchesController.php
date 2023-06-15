@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branches;
 use Illuminate\Http\Request;
 
 class BranchesController extends Controller
@@ -35,7 +36,9 @@ class BranchesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $branch = Branches::find($id);
+
+        return view('users/branches')->with('branch', $branch);
     }
 
     /**

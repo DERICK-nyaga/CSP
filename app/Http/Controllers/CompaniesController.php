@@ -12,7 +12,8 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        return view('companies/dashboard');
+        return view('users/company');
+        // return view('companies/dashboard');
     }
 
     public function our_inhouse()
@@ -62,7 +63,9 @@ class CompaniesController extends Controller
      */
     public function show(string $id)
     {
-        //display the specified company only
+        $company = Company::find($id);
+
+        return view('users/company')->with('company', $company);
     }
 
     /**

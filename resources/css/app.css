@@ -232,23 +232,6 @@ input[type=text]:focus{
 .card-title{
     color: rgba(219, 125, 125, 0.842);
 }
-#readme{
-    position: relative;
-    float: left;
-    margin-bottom: 12px;
-    width: fit-content;
-}
-#readme:hover{
-    background-color: #ff0000;
-}
-#visitme{
-    float: right;
-    margin-bottom: 12px;
-    width: fit-content;
-}
-#visitme:hover{
-    background-color: #ff0000;
-}
 .bi{
     /* margin-left: 5%; */
     color: #fff;

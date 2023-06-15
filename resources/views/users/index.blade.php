@@ -24,10 +24,10 @@
       </tr>
       <tr>
         <th scope="row">1</th>
-        <td>Merkel Couriers</td>
+        <td>Merkel Couriers{{ $company->companyName }}</td>
         <td>+358568939</td>
         <td>mdohdjs@gmail.com</td>
-        <td><a href="#">visit me&rarr;</a></td>
+        <td><a href="{{ $company->id }}">visit me&rarr;</a></td>
       </tr>
       <tr>
         <th scope="row">2</th>

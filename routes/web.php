@@ -35,6 +35,7 @@ Route::post('/parcels', [ParcelController::class, 'store']);
 // company routes
 // Route::get('/companies', [CompaniesController::class, 'index']);
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');
+Route::get('/company/{id}', [CompaniesController::class, 'show'])->name('company');
 Route::get('/company/ourinhouse', [CompaniesController::class, 'our_inhouse'])->name('our_inhouse');
 Route::get('/company/ourcustomers', [CompaniesController::class, 'our_customers'])->name('our_customers');
 Route::get('/companies/dropoffs', [CompaniesController::class, 'dropoff_requests'])->name('dropoffs');

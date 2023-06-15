@@ -15,8 +15,8 @@ class Branches extends Model
         'mobile',
         'email',
     ];
-    
+
     public function company(){
-        return $this->belongsToMany(Company::class);
+        return $this->belongsTo(Company::class);
     }
 }

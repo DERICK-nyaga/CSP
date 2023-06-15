@@ -1,12 +1,11 @@
 @extends('partials.app')
 
-@section('title', 'Homepage')
+@section('title', 'Company')
 
 @section('content')
-
 {{-- display the selected company and and a branches button to display all the company branches --}}
-<div class="branches">
-    
+<div class="company">
+    <h2>this is the company's page</h2>
 </div>
 
 @endsection
