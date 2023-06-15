@@ -81,13 +81,19 @@ to animate an id */
 companyname
 branch-main
         -sub-branch
+            if the company title is a main branch then on the about page don't display the company location/town
+            else if the company being registered is a branch of another company then on the register form dont
+            display the town or city,
+            then the location/town of that branch should be filled in the
 town/city - nairobi
 */
-
+/* if its a branch that is being registered the about and service pages should not be available
+    then if its a main company being registered the about and service pages should be available for filling
+*/
 /* about form which should pop next after the company is successfully registered */
 
 /*
-company location
+company location/town
 weekdays & weekends opening & closing hours for the company
 avenue its located at
 street of its location
