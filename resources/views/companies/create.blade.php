@@ -21,7 +21,7 @@
             <option value="branch">Branch</option>
           </select>
         <div class="mb-3">
-            <input type="number" name="location" class="form-control" placeholder="Town name" value="">
+            <input type="number" name="town" class="form-control" placeholder="Town name" value="">
         </div>
         <button id="bottom-center" class="btn btn-success" type="submit">Register Now</button>
     </form>
