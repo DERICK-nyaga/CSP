@@ -442,3 +442,17 @@ a:hover{
 .closing-hrs label {
     display: block;
 }
+.about-container {
+    color: black;
+    margin: 5% auto;
+    width: 67%;
+    background-color: #eee;
+    border-radius: 8px;
+}
+#bottom-center {
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+label {
+    margin-left: 5.9%;
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsersController;
@@ -49,6 +50,7 @@ Route::get('/companies/parcelrequests', [CompanyMenuController::class, 'requests
 Route::get('/companies/movableunits', [CompanyMenuController::class, 'mus'])->name('mus');
 Route::get('/companies/Company Profile', [CompanyMenuController::class, 'profile'])->name('profile');
 
+Route::get('/create/abouts', [AboutController::class, 'create'])->name('createabout');
 //user notifications controller
 Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications');
 
