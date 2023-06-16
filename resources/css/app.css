@@ -181,6 +181,7 @@ input[type=text]:focus{
     margin: auto;
     border-radius: 8px;
     font-size: 20px;
+    background-color: #10b610;
     color: #eee;
     font: bold;
     height: 50px;
@@ -189,7 +190,6 @@ input[type=text]:focus{
     cursor: pointer;
     text-align: center;
 
-    opacity: 0;
     animation-name: btn;
     animation-duration: 3s;
     animation-delay: 3s;
@@ -202,11 +202,11 @@ input[type=text]:focus{
 }
 
 .btn:hover{
-    background: green;
+    background: red;
     transform: rotateY(360deg);
 }
 @keyframes btn {
-    0% {opacity: 0;}
+    0% {opacity: 0.7;}
     100% {opacity: 1;}
 }
 .items{

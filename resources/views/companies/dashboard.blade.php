@@ -8,6 +8,15 @@
         <h2>4355 Unpicked parcels</h2>
     </div>
     <div class="dash-card">
+        <a class="btn-warning" href="">Add Branch</a>
+    </div>
+    <div class="dash-card">
+        <a class="btn-warning" href="">Add About Info</a>
+    </div>
+    <div class="dash-card">
+        <a class="btn-warning" href="">Add Services</a>
+    </div>
+    <div class="dash-card">
         <h2>2453 Unpaid Parcels</h2>
     </div>
     <div class="dash-card">

@@ -9,13 +9,17 @@ class About extends Model
 {
     use HasFactory;
     protected $fillable= [
-        'BranchName',
+        'town',
         'mobile',
         'email',
         'avenue',
         'street',
         'building',
         'floor',
-        'RoomNumber',
+        'roomnumber',
+        'weekdaysopening',
+        'weekendsopening',
+        'weekdaysclosing',
+        'weekendclosing',
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -30,7 +31,21 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        About::create([
+            'town' => $request->input('town'),
+            'mobile' => $request->input('mobile'),
+            'email' => $request->input('email'),
+            'avenue' => $request->input('avenue'),
+            'street' => $request->input('street'),
+            'building' => $request->input('building'),
+            'floor' => $request->input('floor'),
+            'roomnumber' => $request->input('roomnumber'),
+            'weekdaysopening' => $request->input('weekdaysopening'),
+            'weekendsopening' => $request->input('weekendsopening'),
+            'weekdaysclosing' => $request->input('weekdaysclosing'),
+            'weekendclosing' => $request->input('weekendclosing'),
+        ]);
+        return redirect()->route('services');
     }
 
     /**

@@ -9,40 +9,40 @@
         <h2  class="text-center">Add Company Details</h2>
     </div>
 
-    <form action="/companies" method="POST" class="row g-3">
+    <form action="/compani" method="POST" class="row g-3">
         @csrf
 
         <div class="col-md-6">
             <label for="labels">Town</label>
-            <input name="town" type="text" class="form-control width" id="floatingInput" placeholder="Town where company is located">
+            <input name="town" type="text" value="{{ old('town') }}" class="form-control width" id="floatingInput" placeholder="Town where company is located">
           </div>
           <div class="col-md-6">
             <label for="labels">Avenue</label>
-            <input name="avenue" type="text" class="form-control width" id="floatingInput" placeholder="Branch Avenue name">
+            <input name="avenue" type="text" value="{{ old('avenue') }}" class="form-control width" id="floatingInput" placeholder="Branch Avenue name">
           </div>
           <div class="col-md-6">
             <label for="labels">Street</label>
-            <input name="street" type="text" class="form-control width" id="floatingInput" placeholder="Street name">
+            <input name="street" type="text" value="{{ old('street') }}" class="form-control width" id="floatingInput" placeholder="Street name">
           </div>
              <div class="col-md-6">
                 <label for="labels">Building</label>
-            <input name="building" type="text" class="form-control width" id="floatingInput" placeholder="Building name">
+            <input name="building" type="text" value="{{ old('building') }}" class="form-control width" id="floatingInput" placeholder="Building name">
           </div>
           <div class="col-md-6">
             <label for="labels">Floor</label>
-            <input name="floor" type="text" class="form-control width" id="floatingInput" placeholder="Floor number">
+            <input name="floor" type="text" value="{{ old('floor') }}" class="form-control width" id="floatingInput" placeholder="Floor number">
           </div>
           <div class="col-md-6">
             <label for="labels">Room number</label>
-            <input name="rmnumber" type="text" class="form-control width" id="floatingInput" placeholder="Room number">
+            <input name="roomnumber" type="text" value="{{ old('rmnumber') }}" class="form-control width" id="floatingInput" placeholder="Room number">
           </div>
           <div class="col-md-6">
             <label for="labels">Email</label>
-            <input name="email" type="email" class="form-control width" id="floatingInput" placeholder="Company's email">
+            <input name="email" type="email" value="{{ old('email') }}" class="form-control width" id="floatingInput" placeholder="Company's email">
           </div>
           <div class="col-md-6">
             <label for="labels">Mobile</label>
-            <input name="mobile" type="text" class="form-control width" id="floatingInput" placeholder="Company's mobile">
+            <input name="mobile" type="text" value="{{ old('mobile') }}" class="form-control width" id="floatingInput" placeholder="Company's mobile">
           </div>
           <div class="col-md-6">
             <label for="labels">Weekdays Opening</label>

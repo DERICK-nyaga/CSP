@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('street');
             $table->string('building');
             $table->integer('floor');
-            $table->integer('room');
+            $table->integer('roomnumber');
             $table->string('weekdaysopening');
             $table->string('weekendsopening');
             $table->string('weekdaysclosing');
