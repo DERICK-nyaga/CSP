@@ -53,7 +53,6 @@ class UsersController extends Controller
             'password' => 'required|min:6|max:16|confirmed',
         ]);
 
-        // $user = User::create([$validator]);
         $user = User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
@@ -64,7 +63,7 @@ class UsersController extends Controller
 
         auth()->attempt($request->only('email', 'password'));
         $user->save();
-        return redirect()->route('/');
+        return redirect()->route('homepage');
     }
 
     /**

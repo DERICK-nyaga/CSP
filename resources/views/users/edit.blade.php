@@ -22,10 +22,8 @@
         <div class="f-groups">
         <input class="inputs" type="text" name="mobile" value="{{ $user->mobile }}">
         </div>
-        {{-- <div class="f-groups">
-        <input class="inputs" type="password" name="password" value="">
-        </div> --}}
         <button class="btn btn-success" type="submit">Edit Profile</button>
     </form>
 </div>
+
 @endsection

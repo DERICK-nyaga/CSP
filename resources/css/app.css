@@ -456,3 +456,16 @@ a:hover{
 label {
     margin-left: 5.9%;
 }
+.splash {
+    display: flex;
+    /* justify-content: flex-start; */
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.splash-btn{
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-left: 25%;
+}
+
+

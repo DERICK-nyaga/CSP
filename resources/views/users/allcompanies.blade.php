@@ -28,7 +28,7 @@
         <td>Merkel Couriers</td>
         <td>+358568939</td>
         <td>mdohdjs@gmail.com</td>
-        <td><a href="#">visit me&rarr;</a></td>
+        <td><a href="{{ route('allbranches') }}">visit me&rarr;</a></td>
       </tr>
       <tr>
         <th scope="row">2</th>

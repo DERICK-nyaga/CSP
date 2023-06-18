@@ -1,7 +1,6 @@
 @extends('partials.app')
 
 @section('title', 'Homepage')
-{{-- fetch the list of all the registered companies and their services  --}}
 @section('content')
 <table class="table table-hover table-responsive table-bordered">
     <thead>
@@ -14,14 +13,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        {{-- @foreach ($customers as $customer )
-        <th scope="row">{{ $customer->id }}</th>
-            <td>{{ $customer->lname }}</td>
-            <td>{{ $customer->mobile }}</td>
-            <td>{{ $customer->email }}</td>
-        @endforeach --}}
-      </tr>
       <tr>
         <th scope="row">1</th>
         <td>Merkel Couriers{{ $company->companyName }}</td>

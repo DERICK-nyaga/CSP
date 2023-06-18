@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\BranchesController;
 use App\Http\Controllers\ParcelController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\CompanyMenuController;
@@ -11,9 +12,12 @@ use App\Http\Controllers\UserNavController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationsController;
 // route to create new user
-Route::get('/', [UsersController::class, 'create'])->name('/');
+Route::get('/register', [UsersController::class, 'create'])->name('register');
+Route::get('/homepage', [UsersController::class, 'index'])->name('homepage');
 Route::post('/users', [UsersController::class, 'store']);
-
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+Route::view('/', 'users.splashpage');
 Route::get('/home', [UserNavController::class, 'home'])->name('home');
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
 Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
@@ -21,15 +25,12 @@ Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('
 
 // user dynamic menu routes
 // Route::get('/support', [UsersController::class, 'index'])->name('Homepage');
+Route::get('/allbranches', [BranchesController::class, 'index'])->name('allbranches');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
 Route::get('/about', [UsersController::class, 'about'])->name('abouts');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
 Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
 Route::get('/users/home', [UsersController::class, 'index'])->name('companies');
-
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store']);
-
 // route for parcels online booking
 Route::get('/parcels/create', [ParcelController::class, 'create'])->name('parcels');
 Route::post('/parcels', [ParcelController::class, 'store']);
