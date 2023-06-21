@@ -1,23 +1,5 @@
-{{-- display a single branch here --}}
 @extends('partials.app')
 @section('content')
-
-{{-- <table class="table table-hover table-responsive table-bordered">
-<thead>
-    <tr>
-        <th scope="col">Branch Index</th>
-        <th scope="col">Branch name</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        @foreach ($branches as $branch )
-            <th scope="row">{{ $branch->id }}</th>
-            <td><a href="#routename">{{ $branch->branchname }}</a></td>
-        @endforeach
-    </tr>
-</tbody>
-</table> --}}
 
 <table class="table table-hover table-responsive table-bordered">
     <thead>
@@ -29,6 +11,17 @@
       </tr>
     </thead>
     <tbody>
+        {{-- @if($branches->count())
+            @foreach ($branches as $index => $branch)
+            <tr>
+                <th scope="row">{{ $index + 1 }}</th>
+                <td>{{ $branch->branchName }}</td>
+                <td>{{ $branch->town }}</td>
+                <td><a href="{{ $branch->id }}">visit me&rarr;</a></td>
+            </tr>
+            @endforeach
+        @endif --}}
+
       <tr>
         <th scope="row">1</th>
         <td>Kakamega</td>

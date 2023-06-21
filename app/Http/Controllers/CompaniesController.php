@@ -37,7 +37,8 @@ class CompaniesController extends Controller
      */
     public function create()
     {
-        return view('companies.create');
+        // return view('companies.create');
+        return view('admin.company');
     }
 
     /**

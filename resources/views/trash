@@ -104,3 +104,19 @@ email for the company
 */
 
 /* standard price is the price of items below 10kilograms */
+
+/* a company to have::: company name, email, mobile and headquaters location,
+    a branch to have:: branchname/town, email, mobile number
+
+    each company to have its own pricing table and also have its own branches
+
+    while registering a branch under a company I can have a form that has a dropdown
+    with options of different companies displayed in it so that
+    I can easily select a company that I want to add a branch on
+*/
+
+rice60
+sugar60
+majani25
+gas70
+mboga30
