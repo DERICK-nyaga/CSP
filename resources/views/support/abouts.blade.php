@@ -8,7 +8,7 @@
     <h1 class="text-center">Our Branch Info</h1>
 </div>
 
-{{--
+
 <div id="float" class="one">
     <div class="inside">
         <div id="contacts">
@@ -55,6 +55,6 @@
         </div>
 
     </div>
-</div> --}}
+</div>
 
 @endsection

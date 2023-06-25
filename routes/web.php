@@ -12,12 +12,12 @@ use App\Http\Controllers\UserNavController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationsController;
 // route to create new user
+Route::view('/', 'users.splashpage');
 Route::get('/register', [UsersController::class, 'create'])->name('register');
 Route::get('/homepage', [UsersController::class, 'index'])->name('homepage');
 Route::post('/users', [UsersController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
-Route::view('/', 'users.splashpage');
 Route::get('/home', [UserNavController::class, 'home'])->name('home');
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
 Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
@@ -31,6 +31,7 @@ Route::get('/about', [UsersController::class, 'about'])->name('abouts');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
 Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
 Route::get('/users/home', [UsersController::class, 'index'])->name('companies');
+Route::get('/users/company', [UsersController::class, 'singlecompany'])->name('singlecompany');
 // route for parcels online booking
 Route::get('/parcels/create', [ParcelController::class, 'create'])->name('parcels');
 Route::post('/parcels', [ParcelController::class, 'store']);

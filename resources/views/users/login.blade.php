@@ -3,7 +3,7 @@
 @section('title', 'Login here')
 
 @section('content')
-
+{{-- display form errors for user login --}}
 <div class="form-container">
     <div>
         <h1 class="text-center">Login Here</h1>
@@ -12,21 +12,11 @@
         @csrf
 
         <div class="f-groups">
-        <input class="inputs @error('email') border-red @enderror" type="email" name="email" placeholder="Kindly provide the right email address" value="{{ old('email') }}">
-            @error('email')
-            <div class="error-red">
-              {{ $message }}
-            </div>
-          @enderror
+        <input class="inputs" type="email" name="email" placeholder="Kindly provide the right email address" value="{{ old('email') }}">
       </div>
 
         <div class="f-groups">
-        <input class="inputs @error('password') border-red @enderror" type="password" name="password" placeholder="Kindly set a strong password" value="">
-            @error('password')
-            <div class="error-red">
-              {{ $message }}
-            </div>
-          @enderror
+        <input class="inputs" type="password" name="password" placeholder="Kindly set a strong password" value="">
       </div>
 
       <div class="register">

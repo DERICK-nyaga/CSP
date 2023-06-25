@@ -4,16 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 class CompaniesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        return view('users/company');
-        // return view('companies/dashboard');
+        $companies = DB::table('companies')->get();
+        return view('users/index', ['companies' => $companies]);
+        // return view('users/company')->with('companies', $companies);
+        // return view('companies/dashboard', ['companies' => $companies]);
     }
 
     public function our_inhouse()
@@ -64,9 +67,9 @@ class CompaniesController extends Controller
      */
     public function show(string $id)
     {
-        $company = Company::find($id);
-
-        return view('users/company')->with('company', $company);
+        // $company = Company::find($id);
+            dd('okay');
+        // return view('users/{id}')->with('company', $company);
     }
 
     /**

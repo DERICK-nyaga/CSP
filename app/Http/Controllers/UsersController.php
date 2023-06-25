@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 // use Validator;
 
 class UsersController extends Controller
@@ -15,9 +17,11 @@ class UsersController extends Controller
      * Display a listing of the resource.
      */
 
-     public function index()
+     public function index(): View
      {
-        return view('users/index');
+        // return view('users/index');
+        $companies = DB::table('companies')->get();
+        return view('users/index', ['companies' => $companies]);
      }
      public function allcompanies(){
         return view('users/allcompanies');
@@ -31,6 +35,9 @@ class UsersController extends Controller
      }
      public function contactus(){
          return view('support/contactus');
+     }
+     public function singlecompany(){
+        return view('users/company');
      }
     /**
      * Show the form for creating a new resource.

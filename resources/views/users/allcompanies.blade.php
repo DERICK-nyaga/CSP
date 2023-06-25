@@ -15,7 +15,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+        <tr>
+            @foreach ($companies as $company )
+            <th scope="row">{{ $company->id }}</th>
+            <td>{{ $company->companyName }}</td>
+            <td>{{ $company->address }}</td>
+            <td>mdohdjs@gmail.com</td>
+            <td><a href="{{ $company->id }}">visit me&rarr;</a></td>
+            @endforeach
+        </tr>
+      {{-- <tr>
         <th scope="row">1</th>
         <td>Merkel Couriers</td>
         <td>+358568939</td>
@@ -42,7 +51,7 @@
         <td>+57387589</td>
         <td>almdo@gmail.com</td>
         <td><a href="#">visit me&rarr;</a></td>
-      </tr>
+      </tr> --}}
     </tbody>
   </table>
 

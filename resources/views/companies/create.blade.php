@@ -2,8 +2,8 @@
 
 @section('title', 'Register your company')
 @section('content')
-
     @include('layouts.comnavbar')
+
         <div class="company-container">
             <div class="company">
                 <h2  class="text-center">Register Company</h2>

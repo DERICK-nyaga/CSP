@@ -1,6 +1,6 @@
 @extends('partials.app')
 
-@section('title', 'prices')
+@section('title', 'Prices')
 @section('content')
 
 
@@ -16,14 +16,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        {{-- @foreach ($customers as $customer )
-        <th scope="row">{{ $customer->id }}</th>
-            <td>{{ $customer->lname }}</td>
-            <td>{{ $customer->mobile }}</td>
-            <td>{{ $customer->email }}</td>
-        @endforeach --}}
-      </tr>
       <tr>
         <th scope="row">1</th>
         <td>0-10 kilos</td>

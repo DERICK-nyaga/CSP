@@ -7,20 +7,21 @@
       <tr>
         <th scope="col">Number</th>
         <th scope="col">Company Name</th>
-        <th scope="col">Mobile number</th>
         <th scope="col"> Email address</th>
         <th scope="col">Check Company</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Merkel Couriers{{ $company->companyName }}</td>
-        <td>+358568939</td>
-        <td>mdohdjs@gmail.com</td>
-        <td><a href="{{ $company->id }}">visit me&rarr;</a></td>
+        @foreach ($companies as $company )
+        <th scope="row">{{ $company->id }}</th>
+        <td>{{ $company->CompanyName }}</td>
+        <td>{{ $company->address }}</td>
+        <td><a href="{{ route('singlecompany') }}">visit me&rarr;</a></td>
+        @endforeach
+
       </tr>
-      <tr>
+      {{-- <tr>
         <th scope="row">2</th>
         <td>Jacabees Fargo</td>
         <td>+5385909</td>
@@ -40,7 +41,7 @@
         <td>+57387589</td>
         <td>almdo@gmail.com</td>
         <td><a href="#">visit me&rarr;</a></td>
-      </tr>
+      </tr> --}}
     </tbody>
   </table>
 
