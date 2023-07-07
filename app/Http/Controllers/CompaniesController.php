@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use App\Models\Branches;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 class CompaniesController extends Controller
@@ -15,8 +16,6 @@ class CompaniesController extends Controller
     {
         $companies = DB::table('companies')->get();
         return view('users/index', ['companies' => $companies]);
-        // return view('users/company')->with('companies', $companies);
-        // return view('companies/dashboard', ['companies' => $companies]);
     }
 
     public function our_inhouse()
@@ -67,9 +66,9 @@ class CompaniesController extends Controller
      */
     public function show(string $id)
     {
-        // $company = Company::find($id);
-            dd('okay');
-        // return view('users/{id}')->with('company', $company);
+        $company = DB::table('companies')->find($id);
+        $company->branches = Branches::where('companies_id',$id)->get();
+        return view('users.show')->with('company', $company);
     }
 
     /**

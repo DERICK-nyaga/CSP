@@ -1,8 +1,8 @@
-@extends('partials.app')
+@extends('layouts.app')
 
 @section('title', 'About Us')
 @section('content')
-
+    @include('layouts.customernavbar')
 {{-- contents of this page should be fetched from the database on the company descriptions --}}
 <div class="contact-page">
     <h1 class="text-center">Our Branch Info</h1>

@@ -1,6 +1,7 @@
-@extends('partials.app')
+@extends('layouts.app')
 
 @section('content')
+    @include('layouts.customernavbar')
 
 <div class="form-container">
     <div>

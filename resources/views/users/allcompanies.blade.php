@@ -2,7 +2,7 @@
 
 @section('title', 'List of Companies')
 @section('content')
-@include('partials.customernavbar')
+  @include('partials.customernavbar')
 
 <table class="table table-hover table-responsive table-bordered">
     <thead>
@@ -15,15 +15,16 @@
       </tr>
     </thead>
     <tbody>
-        <tr>
+
             @foreach ($companies as $company )
+        <tr>
             <th scope="row">{{ $company->id }}</th>
-            <td>{{ $company->companyName }}</td>
+            <td>{{ $company->ompanyName }}</td>
             <td>{{ $company->address }}</td>
-            <td>mdohdjs@gmail.com</td>
-            <td><a href="{{ $company->id }}">visit me&rarr;</a></td>
-            @endforeach
+            <td><a href="{{ route('singlecompany', $company->id) }}">visit me&rarr;</a></td>
         </tr>
+            @endforeach
+
       {{-- <tr>
         <th scope="row">1</th>
         <td>Merkel Couriers</td>

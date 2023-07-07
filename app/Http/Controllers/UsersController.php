@@ -17,11 +17,8 @@ class UsersController extends Controller
      * Display a listing of the resource.
      */
 
-     public function index(): View
+     public function index()
      {
-        // return view('users/index');
-        $companies = DB::table('companies')->get();
-        return view('users/index', ['companies' => $companies]);
      }
      public function allcompanies(){
         return view('users/allcompanies');

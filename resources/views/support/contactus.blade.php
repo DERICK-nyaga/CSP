@@ -1,7 +1,8 @@
-@extends('partials.app')
+@extends('layouts.app')
 
 @section('title', 'Contact Us')
 @section('content')
+    @include('layouts.customernavbar')
 <div class="contact-page">
     <h1 class="text-center">Contact Our Embu</h1>
 </div>

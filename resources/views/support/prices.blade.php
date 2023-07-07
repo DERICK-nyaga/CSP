@@ -1,8 +1,8 @@
-@extends('partials.app')
+@extends('layouts.app')
 
 @section('title', 'Prices')
 @section('content')
-
+    @include('layouts.customernavbar')
 
 <table class="table table-hover table-responsive table-bordered">
     <thead>

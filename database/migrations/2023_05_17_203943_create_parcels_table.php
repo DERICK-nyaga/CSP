@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('parcels', function (Blueprint $table) {
             $table->increments('id');
+            // $table->unsignedInteger('branch_id');
             $table->string('sender');
             $table->string('SenderContact');
             $table->string('receipient');
@@ -26,6 +27,10 @@ return new class extends Migration
             $table->string('category');
             $table->string('payment');
             $table->integer('price');
+            // $table->foreign('branch_id')
+            // ->references('id')
+            // ->on('branches')
+            // ->onDelete('cascade');
             $table->timestamps();
         });
 
