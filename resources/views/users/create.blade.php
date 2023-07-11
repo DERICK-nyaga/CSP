@@ -21,6 +21,10 @@
       </div>
 
         <div class="f-groups">
+        <input class="inputs" type="text" name="username" placeholder="Kindly fill in your username" value="{{ old('username') }}">
+      </div>
+
+        <div class="f-groups">
         <input class="inputs" type="email" name="email" placeholder="Kindly provide the right email address" value="{{ old('email') }}">
       </div>
 

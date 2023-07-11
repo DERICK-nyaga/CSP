@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -52,6 +53,7 @@ class UsersController extends Controller
         $validator = Validator::make($request->all(),[
             'fname' => 'required|min:2|max:100',
             'lname' => 'required|min:2|max:100',
+            'username' => 'required|min:2|max:100',
             'email'=> 'required|email|max:150|unique:users',
             'mobile'=> 'required',
             'password' => 'required|min:6|max:16|confirmed',
@@ -60,13 +62,16 @@ class UsersController extends Controller
         $user = User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
+            'username' => $request->input('username'),
             'email' => $request->input('email'),
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
-        ]);
-
+    ]);
         auth()->attempt($request->only('email', 'password'));
         $user->save();
+        $user = Auth::user();
+        $username = Auth::username();
+        $request->session()->put('username', $username);
         return redirect()->route('homepage');
     }
 

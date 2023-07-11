@@ -114,3 +114,16 @@ email for the company
     with options of different companies displayed in it so that
     I can easily select a company that I want to add a branch on
 */
+
+/*
+    to book a parcel for pickup the form must have the following::
+    1. username for the person that is sending out the parcel
+    2. mobile # for the person sending the parcel
+    3. destination address for the parcel like a town, building number or office.
+    4. name of the person receiving the parcel
+    5. mobile # for the person receiving the parcel
+    6. place where the sender wishes the parcel to be picked at
+    7. payment method either pay on delivery or now
+    8. weight of the parcel.
+    the cost of the parcel is displayed using the weight of the parcel as indicated on the users' sender form 
+*/

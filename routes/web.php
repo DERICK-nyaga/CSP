@@ -13,7 +13,7 @@ use App\Http\Controllers\NotificationsController;
 
 Route::view('', 'users.splashpage');
 Route::get('/register', [UsersController::class, 'create'])->name('register');
-Route::get('/homepage', [UsersController::class, 'index'])->name('homepage');
+Route::get('/homepage', [UsersController::class, 'index'])->name('homepage')->middleware('auth');
 Route::post('/users', [UsersController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
@@ -22,15 +22,15 @@ Route::get('/support/prices', [UserNavController::class, 'prices'])->name('price
 Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
 Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('contacts');
 
-Route::get('/allbranches', [BranchesController::class, 'index'])->name('allbranches');
+Route::get('/allbranches', [BranchesController::class, 'index'])->name('allbranches')->middleware('auth');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
 Route::get('/about', [UsersController::class, 'about'])->name('abouts');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
-Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
-Route::get('/users/home', [CompaniesController::class, 'index'])->name('companies');
-Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('singlecompany');
+Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies')->middleware('auth');
+Route::get('/users/home', [CompaniesController::class, 'index'])->name('companies')->middleware('auth');
+Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('singlecompany')->middleware('auth');
 
-Route::get('/parcels/create', [ParcelController::class, 'create'])->name('parcels');
+Route::get('/parcels/create', [ParcelController::class, 'create'])->name('parcels')->middleware('auth');
 Route::post('/parcels', [ParcelController::class, 'store']);
 
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');

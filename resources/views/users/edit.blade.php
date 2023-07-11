@@ -18,6 +18,9 @@
         <input class="inputs" type="text" name="lname" value="{{ $user->lname }}">
         </div>
         <div class="f-groups">
+            <input class="inputs" type="text" name="username" value="{{ $user->username }}">
+        </div>
+        <div class="f-groups">
         <input class="inputs" type="email" name="email" value="{{ $user->email }}">
         </div>
         <div class="f-groups">
