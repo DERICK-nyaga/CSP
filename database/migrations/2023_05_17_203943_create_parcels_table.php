@@ -22,11 +22,7 @@ return new class extends Migration
             $table->string('weight');
             $table->string('PickupStation');
             $table->string('DeliveryAddress');
-            $table->string('info');
-            $table->integer('tracking_number');
-            $table->string('category');
             $table->string('payment');
-            $table->integer('price');
             // $table->foreign('branch_id')
             // ->references('id')
             // ->on('branches')

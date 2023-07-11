@@ -125,5 +125,6 @@ email for the company
     6. place where the sender wishes the parcel to be picked at
     7. payment method either pay on delivery or now
     8. weight of the parcel.
-    the cost of the parcel is displayed using the weight of the parcel as indicated on the users' sender form 
+    the cost of the parcel is displayed using the weight of the parcel as indicated on the users' sender form
 */
+

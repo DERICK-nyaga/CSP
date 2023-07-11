@@ -37,11 +37,7 @@ class ParcelController extends Controller
             'weight' => 'required',
             'PickupStation' => 'required',
             'DeliveryAddress' => 'required',
-            'info' => 'required',
-            'tracking_number',
-            'category',
             'payment',
-            'price',
 
         ]);
         Parcels::create($data);
