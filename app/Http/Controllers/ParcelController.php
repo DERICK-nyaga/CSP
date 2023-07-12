@@ -37,9 +37,12 @@ class ParcelController extends Controller
             'weight' => 'required',
             'PickupStation' => 'required',
             'DeliveryAddress' => 'required',
-            'payment',
+            'payment' => 'required',
 
         ]);
+        // $price = 330;
+        // $initialweight = 10;
+        // $amount = (($weight - $initialweight)*50) + $price;
         Parcels::create($data);
 
         return redirect()->route('parcels');

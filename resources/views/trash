@@ -5,90 +5,24 @@
 }
 }
 
-to animate an id */
-#id {
-    height: 350px;
-}
-#content h1 {
-    line-height: 7;
-    position:relative;
-    animation: downwards;
-    animation-duration: 3s;
-    animation-fill-mode: forawards;
-    /* this will cause the item being animated to settle to the place its intended */
-}
-/* this willm make it to movr fro top to bottom */
-@keyframes downwards {
-    0%   {
-        top: -100px;
-    }
-    100% {
-        top: 400px;
-    }
-}
-
-/* style content in a form  and animate*/
-
-#content {
-    position: relative;
-    animation-name: content;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-}
-
-/* when the content is so huge set the left or right pixes to be negative huge number */
-@keyframes content {
-    0% {
-        left: -1000px;
-    }
-    100% {
-        left: 0;
-    }
-}
-
-/* 0112358763 */
-
-/* style up a button with zero opacity then set it to one with a delay of 3seconds */
-
-.btn {
-    display: block;
-    color: blueviolet;
-    text-decoration: none;
-    padding: 2rem 3.5rem;
-    border: #4444 1px solid;
-    margin-top: 30px;
-    opacity: 0;
-    animation-name: btn;
-    animation-duration: 3s;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
-    transition-property: transform;
-    transition-duration: 1s;
-}
-
-/* rotate the button along the Y axis at an angle */
-.btn:hover {
-    transform: rotateY(180deg);
-}
-
-@keyframes btn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
 
 /* a form to register a company */
 /*
 companyname
 branch-main
         -sub-branch
-            if the company title is a main branch then on the about page don't display the company location/town
-            else if the company being registered is a branch of another company then on the register form dont
+            if the company title is a main branch then on
+            the about page don't display the company location/town
+            else if the company being registered is a
+            branch of another company then on the register form dont
             display the town or city,
             then the location/town of that branch should be filled in the
 town/city - nairobi
 */
-/* if its a branch that is being registered the about and service pages should not be available
-    then if its a main company being registered the about and service pages should be available for filling
+/* if its a branch that is being registered the about
+and service pages should not be available
+    then if its a main company being registered
+    the about and service pages should be available for filling
 */
 /* about form which should pop next after the company is successfully registered */
 
@@ -116,15 +50,11 @@ email for the company
 */
 
 /*
-    to book a parcel for pickup the form must have the following::
-    1. username for the person that is sending out the parcel
-    2. mobile # for the person sending the parcel
-    3. destination address for the parcel like a town, building number or office.
-    4. name of the person receiving the parcel
-    5. mobile # for the person receiving the parcel
-    6. place where the sender wishes the parcel to be picked at
-    7. payment method either pay on delivery or now
-    8. weight of the parcel.
-    the cost of the parcel is displayed using the weight of the parcel as indicated on the users' sender form
+to calculate the price of a single product and display the
+cost of sending to the user then after its been paid
+change the status into paid and when unpaid set the status
+ to be equal to the cost of sendig the parcel
+    the cost of the parcel is displayed using the weight
+     of the parcel as indicated on the users' sender form
 */
 

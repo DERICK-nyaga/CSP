@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -59,7 +58,7 @@ class UsersController extends Controller
             'password' => 'required|min:6|max:16|confirmed',
         ]);
 
-        $user = User::create([
+        User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
             'username' => $request->input('username'),
@@ -67,11 +66,8 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
     ]);
+        
         auth()->attempt($request->only('email', 'password'));
-        $user->save();
-        $user = Auth::user();
-        $username = Auth::username();
-        $request->session()->put('username', $username);
         return redirect()->route('homepage');
     }
 

@@ -8,7 +8,7 @@
     <div>
         <h1 class="text-center">Login Here</h1>
     </div>
-    <form action="/users" method="POST">
+    <form action="/login" method="POST">
         @csrf
 
         <div class="f-groups">

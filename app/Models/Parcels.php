@@ -19,4 +19,10 @@ class Parcels extends Model
         'DeliveryAddress',
         'payment',
     ];
+    public function branches(){
+        return $this->belongsTo(Branches::class);
+    }
+    public function user(){
+        return $this->belongsTo(Users::class);
+    }
 }

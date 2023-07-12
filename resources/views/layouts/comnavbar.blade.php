@@ -14,6 +14,7 @@
                     {{ $navbarItem->name }}</a>
             </li>
         @endforeach
+        <li class="nav-item">{{ auth()->user()->username }}</li>
         </ul>
       </div>
     </div>

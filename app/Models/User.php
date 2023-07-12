@@ -26,6 +26,9 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function parcels(){
+        return $this->hasMany(Parcels::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

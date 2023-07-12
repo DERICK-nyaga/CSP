@@ -3,6 +3,7 @@
 @section('title', 'Homepage')
 @section('content')
     @include('layouts.customernavbar')
+
 <table class="table table-hover table-responsive">
     <thead>
       <tr>
@@ -13,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      
+
         @foreach ($companies as $company )
         <tr>
         <th scope="row">{{ $company->id }}</th>
@@ -22,9 +23,8 @@
         <td><a href="{{ route('singlecompany', $company->id) }}">visit me&rarr;</a></td>
     </tr>
         @endforeach
-     
+
     </tbody>
   </table>
-
 @endsection
 

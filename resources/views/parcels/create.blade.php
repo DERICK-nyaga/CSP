@@ -1,17 +1,17 @@
-@extends('partials.app')
+@extends('layouts.app')
 
 @section('title', 'Send Parcel')
 
 @section('content')
 
-{{-- @auth --}}
-{{-- <div class="online-booking">
+<div class="online-booking">
     <div>
         <h1 class="text-center">Send Parcel form</h1>
     </div>
 <form action="/parcels" method="POST" class="row g-3">
     @csrf
 
+        <input name="status" type="hidden" class="form-control" placeholder="This will set the cost" value="">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Sender name</label>
     <input name="sender" type="text" class="form-control" placeholder="Your own real name">
@@ -30,10 +30,10 @@
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Your town</label>
-    <input type="text" name="town" class="form-control" placeholder="The town you currently reside in">
+    <input type="text" name="town" class="form-control" placeholder="The dropoff location">
   </div>
   <div class="col-md-6">
-    <label for="inputCity" class="form-label">Parcel Weight</label>
+    <label for="weight" class="form-label">Parcel Weight</label>
     <input type="text" name="weight" class="form-control" placeholder="The weight of the parcel in kilograms">
   </div>
   <div class="col-md-6">
@@ -44,42 +44,25 @@
     <label for="inputCity" class="form-label">Delivery Address</label>
     <input type="text" name="DeliveryAddress" class="form-control" placeholder="The delivery address of the parcel">
   </div>
-  <div class="col-md-8">
-    <label for="inputCity" class="form-label">Additonal information</label>
-    <input type="text" name="info" class="form-control move" placeholder="Additional information about package">
-  </div>
-  <div class="col-12">
-    <button type="submit" id="button" class="btn btn-primary">Next</button>
-  </div>
-</form>
-</div> --}}
-{{-- @endauth --}}
 
-{{-- @guest
-    {{ route('/') }}
-@endguest --}}
-<div class="online-booking">
-    <div>
-        <h1 class="text-center">Register Company</h1>
-    </div>
-<form action="/parcels" method="POST" class="row g-3">
-    @csrf
+  <label for="inputCity" class="label-payment">Payment</label>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1" value="now" checked>
+    <label class="form-check-label" for="flexRadioDefault1">
+      Now
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault2"  value="onDelivery">
+    <label class="form-check-label" for="flexRadioDefault2">
+      On Delivery
+    </label>
+  </div>
 
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Company Name</label>
-    <input name="sender" type="text" class="form-control" placeholder="Your own real name">
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Branch</label>
-    <input name="sender" type="text" class="form-control" placeholder="Your own real name">
-  </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Town</label>
-    <input name="sender" type="text" class="form-control" placeholder="Your own real name">
-  </div>
   <div class="col-12">
-    <button type="submit" id="button" class="btn btn-primary">Register</button>
+    <button type="submit" id="button" class="btn btn-primary">Submit</button>
   </div>
+  
 </form>
 </div>
 
