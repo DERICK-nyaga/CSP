@@ -58,7 +58,7 @@ class UsersController extends Controller
             'password' => 'required|min:6|max:16|confirmed',
         ]);
 
-        User::create([
+       User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
             'username' => $request->input('username'),
@@ -66,8 +66,7 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
     ]);
-        
-        auth()->attempt($request->only('email', 'password'));
+       auth()->attempt($request->only('email', 'password'));
         return redirect()->route('homepage');
     }
 

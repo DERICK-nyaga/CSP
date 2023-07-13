@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Parcels extends Model
+class Parcel extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'companies_id',
+        'branch_id',
         'sender',
         'SenderContact',
         'receipient',
@@ -18,6 +20,7 @@ class Parcels extends Model
         'PickupStation',
         'DeliveryAddress',
         'payment',
+        'price',
     ];
     public function branches(){
         return $this->belongsTo(Branches::class);

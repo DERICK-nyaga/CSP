@@ -16,13 +16,14 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    // protected $model = \App\Models\User::class;
+    protected $model = \App\Models\User::class;
     public function definition(): array
     {
        // \App\Models\User::factory()->create();
         return [
             'fname' => fake()->firstName(),
             'lname' => fake()->lastName(),
+            'username' => fake()->userName(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'mobile' => fake()->numerify(),

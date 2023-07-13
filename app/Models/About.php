@@ -9,7 +9,7 @@ class About extends Model
 {
     use HasFactory;
     protected $fillable= [
-        'town',
+        'branch',
         'mobile',
         'email',
         'avenue',
@@ -20,6 +20,6 @@ class About extends Model
         'weekdaysopening',
         'weekendsopening',
         'weekdaysclosing',
-        'weekendclosing',
+        'weekendsclosing',
     ];
 }

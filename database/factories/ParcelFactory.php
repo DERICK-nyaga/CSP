@@ -14,18 +14,23 @@ class ParcelFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = \App\Models\Parcel::class;
     public function definition(): array
     {
+               // \App\Models\Parcels::factory()->create();
         return [
-            'sender' => fake()->sender(),
-            'SenderContact' => fake()->SenderContact(),
-            'receipient' => fake()->receipient(),
-            'ReceipientContact' => fake()->ReceipientContact(),
-            'town' => fake()->town(),
-            'weight' => fake()->weight(),
-            'PickupStation' => fake()->PickupStation(),
-            'DeliveryAddress' => fake()->DeliveryAddress(),
-            'info' => fake()->info(), 
+            'companies_id' => fake()->numerify(),
+            'branch_id' => fake()->numerify(),
+            'sender' => fake()->firstName(),
+            'SenderContact' => fake()->numerify(),
+            'receipient' => fake()->firstName(),
+            'ReceipientContact' => fake()->numerify(),
+            'town' => fake()->city(),
+            'weight' => fake()->numerify(),
+            'PickupStation' => fake()->city(),
+            'DeliveryAddress' => fake()->city(),
+            'payment' => fake()->lastName(),
+            'price' => fake()->numerify(),
         ];
     }
 }

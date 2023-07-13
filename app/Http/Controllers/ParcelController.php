@@ -26,6 +26,26 @@ class ParcelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    public function claculatePrice($weight, $fragility) {
+        $price = 0;
+        $initialweight = 10;
+        if($weight <=0 && $weight >=10){
+            $price +=330;
+        }
+        elseif($weight >10 && $weight >=45){
+            $price = (($weight - $initialweight)* 20) + 330;
+        }
+        elseif($weight >45 && $weight <= 100){
+            $price = (($weight - $initialweight)* 30) + 330;
+        }
+        else{
+            return redirect()->route('parcels')->withErrors('The weight is above what we transit');
+        }
+        if($fragility === 'tv'|| 'woofer' || 'fridge' || 'microwave') {
+            $price = (($weight - $initialweight) * 50) + 499;
+        }
+    }
+
     public function store(Request $request)
     {
         $data = request()->validate([
@@ -38,16 +58,13 @@ class ParcelController extends Controller
             'PickupStation' => 'required',
             'DeliveryAddress' => 'required',
             'payment' => 'required',
+            'price' => 'required',
 
         ]);
-        // $price = 330;
-        // $initialweight = 10;
-        // $amount = (($weight - $initialweight)*50) + $price;
         Parcels::create($data);
 
         return redirect()->route('parcels');
     }
-
     /**
      * Display the specified resource.
      */
