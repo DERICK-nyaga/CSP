@@ -67,9 +67,9 @@ class CompaniesController extends Controller
      */
     public function show(string $id)
     {
-        $company = DB::table('companies')->find($id);
-        $company->branches = Branches::where('companies_id',$id)->get();
-        return view('users.show')->with('company', $company);
+        // $company = DB::table('companies')->find($id);
+         $branches = Branches::where('companies_id',$id)->get();
+        return view('users.show')->with('branches', $branches);
     }
 
     /**

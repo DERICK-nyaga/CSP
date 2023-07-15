@@ -6,6 +6,45 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background: hsla(0, 1%, 30%, 0.2);
 }
+.prices {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+}
+.price-card {
+    color: #eee;
+    width: 45%;
+    height: 50vh;
+    margin: 2%;
+    background-color: #a9a9a9;
+    transition: all .3s ease-in-out;
+    border-radius: 8px;
+}
+.price-card:hover {
+    box-shadow: 4px 4px #eee;
+    transform: scale(1.06);
+}
+.card-head {
+    background-color: #eee;
+    color: #003330;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.left{
+    margin-left: 4%;
+}
+.price h3 {
+    color: #ff0000;
+    font-weight: 900;
+}
+.price p {
+    margin-top: 3rem;
+    color: #334453;
+    font-weight: 800;
+    text-align: center;
+}
 .dashboard{
     width: 100%;
     display: flex;
@@ -345,7 +384,7 @@ a:hover{
 }
 
 .footer {
-    background: #cccc;
+    background: darkgray;
     position: relative;
 
     animation-name: footer;
@@ -427,8 +466,11 @@ a:hover{
     text-align: center;
 }
 #located {
-    display: inline-block;
+    display: block;
     padding: 20px;
+}
+.inline {
+    display: inline;
 }
 .flex {
     display: flex;
@@ -454,6 +496,10 @@ a:hover{
     margin-bottom: 12px;
 }
 label {
+    margin-left: 5.9%;
+    font-weight: 600;
+}
+.ml{
     margin-left: 5.9%;
 }
 .splash {

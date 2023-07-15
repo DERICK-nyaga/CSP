@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -24,9 +25,13 @@ class LoginController extends Controller
 
         if(!auth()->attempt($request->only('email','password'))){
             return back()->with('status', 'Invalid details');
+        }else{
+              $user = Auth::user();
+              
+              return redirect()->route('homepage');
         }
 
-            return redirect()->route('homepage');
+
 
     }
 

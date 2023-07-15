@@ -1,8 +1,11 @@
 /* {{
     click on a user and display all the packages under the customer
     if packages are unpaid select the unpaid packages and give a total to be paid
-    when a company is selected display its information in a single page and the pricing list of all its contents
+    when a company is selected display its information in a single page
+    and the pricing list of all its contents
 }
+// have a page where an admin for the company can view all the total amount that
+    the branches and the entire company has made.
 }
 
 
@@ -27,14 +30,12 @@ and service pages should not be available
 /* about form which should pop next after the company is successfully registered */
 
 /*
-company location/town
-weekdays & weekends opening & closing hours for the company
-avenue its located at
-street of its location
-building where it is located at
-floor number & room number
-mobile number for the company
-email for the company
+    -if payment is equal to now,,, then change the status to be paid
+    -else set status to unpaid if payment is equal to onDelivery
+    -then a popup form containing the amount should appear where when clicked okay,
+    -it should make an mpesa push message to the user's contact,
+    -once the payment has been made it should set the status to paid
+    -and collect the payment details like the paid amount and the mpesa confirmation message
 */
 
 /* standard price is the price of items below 10kilograms */

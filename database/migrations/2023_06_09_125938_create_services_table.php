@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('branch_id');
+            $table->unsignedInteger('companies_id');
             $table->string('service1');
             $table->string('service2');
             $table->string('service3');
@@ -25,10 +25,10 @@ return new class extends Migration
             $table->string('service9');
             $table->string('service10');
             $table->timestamps();
-            $table->foreign('branch_id')
-            ->references('id')
-            ->on('branches')
-            ->onDelete('cascade');
+            // $table->foreign('companies_id')
+            // ->references('id')
+            // ->on('companies')
+            // ->onDelete('cascade');
         });
     }
 

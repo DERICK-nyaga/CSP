@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
@@ -28,7 +29,8 @@ class UsersController extends Controller
         return view('support/prices');
      }
      public function about(){
-         return view('support/abouts');
+        $abouts = DB::table('abouts')->get();
+        return view('support/abouts', ['abouts' => $abouts]);
      }
      public function contactus(){
          return view('support/contactus');
@@ -66,8 +68,8 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
     ]);
-       auth()->attempt($request->only('email', 'password'));
-        return redirect()->route('homepage');
+    //    auth()->attempt($request->only('email', 'password'));
+        return redirect()->route('login');
     }
 
     /**

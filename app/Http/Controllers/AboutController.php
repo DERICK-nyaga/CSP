@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -12,10 +13,12 @@ class AboutController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(String $id):View
     {
-        $abouts = DB::table('abouts')->get();
-        return view('support.abouts', ['abouts' => $abouts]);
+        $company = DB::table('companies')->find($id);
+        $abouts = $company->abouts = DB::table('abouts')->where('companies_id',$id)->get();
+        // $abouts = DB::table('abouts')->get();
+        return view('support/abouts', ['abouts' => $abouts]);
     }
 
     /**
@@ -78,5 +81,6 @@ class AboutController extends Controller
     public function destroy(string $id)
     {
         //
-    }
+
+   }
 }

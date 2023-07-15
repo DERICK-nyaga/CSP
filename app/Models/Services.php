@@ -10,6 +10,7 @@ class Services extends Model
     use HasFactory;
 
     protected $fillable = [
+        'companies_id',
         'service1',
         'service2',
         'service3',
@@ -21,4 +22,7 @@ class Services extends Model
         'service9',
         'service10',
     ];
+    public function services(){
+        return $this->belongsTo(Company::class);
+    }
 }

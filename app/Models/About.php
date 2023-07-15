@@ -22,4 +22,7 @@ class About extends Model
         'weekdaysclosing',
         'weekendsclosing',
     ];
+    public function abouts(){
+        return $this->belongsTo(Company::class);
+    }
 }

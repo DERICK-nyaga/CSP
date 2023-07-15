@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Parcels;
+use App\Models\Parcel;
 use Illuminate\Http\Request;
 
 class ParcelController extends Controller
@@ -49,6 +49,7 @@ class ParcelController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
+            'branch' => 'required',
             'sender' => 'required',
             'SenderContact' => 'required',
             'receipient' => 'required',
@@ -61,7 +62,7 @@ class ParcelController extends Controller
             'price' => 'required',
 
         ]);
-        Parcels::create($data);
+        Parcel::create($data);
 
         return redirect()->route('parcels');
     }
@@ -92,7 +93,7 @@ class ParcelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Parcels $parcel)
+    public function destroy(Parcel $parcel)
     {
         $parcel->delete();
 

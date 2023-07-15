@@ -20,6 +20,6 @@ class Branches extends Model
         return $this->belongsTo(Company::class);
     }
     public function parcels(){
-        return $this->hasMany(Parcels::class);
+        return $this->hasMany(Parcel::class);
     }
 }
