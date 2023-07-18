@@ -14,12 +14,6 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('prices') }}">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('parcels') }}">Send Parcel</a></li>
             <li class="nav-item"><a class="nav-link" href="#{{ route('home') }}">My parcels</a></li>
-            {{-- @foreach ($usernav as $navbarItem)
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route($navbarItem->route)}}">
-                    {{ $navbarItem->name }}</a>
-            </li>
-        @endforeach --}}
         </ul>
       </div>
     </div>
