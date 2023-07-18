@@ -28,6 +28,18 @@ class ParcelController extends Controller
         return view('parcels.create');
     }
 
+
+    public function checkoutCreate(){
+        return redirect()->route('checkout');
+    }
+    public function checkoutStore(){
+    // 
+    }
+    /**
+     *function to fill in user details
+     *function to display a form with a checkout button with price on it
+
+     */
     /**
      * Store a newly created resource in storage.
      */

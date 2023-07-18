@@ -22,7 +22,9 @@
       <div class="register">
         <button id="bottom-center" class="btn btn-success" type="submit">Login Now</button>
     </div>
-
+    <div class="reset-password">
+        <a href="{{ route('reset-password') }}">Forgot Password?</a>
+    </div>
     </form>
 </div>
 

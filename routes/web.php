@@ -10,6 +10,8 @@ use App\Http\Controllers\CompanyMenuController;
 use App\Http\Controllers\UserNavController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NotificationsController;
+use App\Http\Controllers\ResetPasswordController;
+
 
 Route::view('', 'users.splashpage');
 Route::get('/register', [UsersController::class, 'create'])->name('register');
@@ -53,5 +55,7 @@ Route::get('/companies/Company Profile', [CompanyMenuController::class, 'profile
 Route::get('/create/abouts', [AboutController::class, 'create'])->name('createabout');
 Route::get('/notifications', [NotificationsController::class, 'index'])->name('notifications');
 
+Route::get('/reset-password', [ResetPasswordController::class, 'index'])->name('reset-password');
+Route::post('/reset-password/{id}', [ResetPasswordController::class, 'update'])->name('update-password');
 
 // have a page where when I click on prices it selects all companies prices and displays them for a user..

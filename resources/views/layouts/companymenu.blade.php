@@ -14,6 +14,14 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('prices') }}">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('parcels') }}">Send Parcel</a></li>
             <li class="nav-item"><a class="nav-link" href="#{{ route('home') }}">My parcels</a></li>
+            @auth
+                <li class="nav-item"><a class="nav-link" href="#username">Username</a></li>
+                <li class="nav-item"><a class="nav-link" href="#logout">Logout</a></li>
+            @endauth
+            @guest()
+            <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+            @endguest
         </ul>
       </div>
     </div>

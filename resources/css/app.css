@@ -504,12 +504,11 @@ label {
 }
 .splash {
     display: flex;
-    /* justify-content: flex-start; */
+    flex-wrap: wrap;
     margin-top: 15%;
     margin-bottom: 10%;
 }
 .splash-btn{
-    flex-wrap: wrap;
     padding: 10px;
     margin-left: 25%;
 }
@@ -541,4 +540,13 @@ label {
     color: #a52a2a;
     font-size: 20px;
     margin-left: 5%;
+}
+.reset-password {
+    text-align: center;
+}
+.reset-password a {
+    color: #fff;
+}
+.reset-password a:hover {
+    color: #ff0000;
 }
