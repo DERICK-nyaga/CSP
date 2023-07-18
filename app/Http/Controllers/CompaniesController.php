@@ -22,6 +22,9 @@ class CompaniesController extends Controller
         return view('users/index', ['companies' => $companies]);
     }
 
+    public function branch(){
+        return view('users/company');
+    }
     public function our_inhouse()
     {
         return view('companies/inhouse');
@@ -71,7 +74,7 @@ class CompaniesController extends Controller
     public function show(string $id)
     {
         $branches = Branches::where('companies_id',$id)->get();
-        return view('users.show')->with('branches', $branches);
+        return view('users.branches')->with('branches', $branches);
     }
 
     /**

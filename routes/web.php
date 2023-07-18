@@ -26,6 +26,7 @@ Route::get('/about', [AboutController::class, 'about'])->name('abouts');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
 Route::get('/users/home', [CompaniesController::class, 'index'])->name('companies');
+Route::get('/users/company', [CompaniesController::class, 'branch'])->name('visit company');
 Route::get('/allbranches', [BranchesController::class, 'index'])->name('allbranches');
 Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
 Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('singlecompany');

@@ -3,7 +3,8 @@
 @section('title', 'Company')
 
 @section('content')
-    @include('layouts.customernavbar')
+    @include('layouts.companymenu')
+    <h1>welcome</h1>
 {{-- display the selected company and and a branches button to display all the company branches --}}
 {{-- <div class="company">
     <h2>this is the company's page</h2>

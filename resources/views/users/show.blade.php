@@ -18,7 +18,7 @@
             @foreach($branches as $branch)
             <th scope="row">{{ $branch->id }}</th>
             <td><a href="{{ $branch->id }}">{{ $branch->branchname }}</a></td>
-            <td><a href="{{ route('singlecompany', $branch->id) }}">visit me&rarr;</a></td>
+            <td><a href="{{ route('users/branches', $branch->id) }}">visit me&rarr;</a></td>
         </tr>
             @endforeach
 
