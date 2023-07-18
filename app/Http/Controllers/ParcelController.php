@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Parcel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Branches;
 
 class ParcelController extends Controller
 {
@@ -14,7 +16,10 @@ class ParcelController extends Controller
     {
         return view('users/index');
     }
-
+    public function myparcels(){
+        $myparcels = DB::table('parcels')->get();
+        return view('users/myparcels', ['myparcels' => $myparcels]);
+     }
     /**
      * Show the form for creating a new resource.
      */

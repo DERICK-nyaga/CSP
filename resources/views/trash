@@ -58,4 +58,15 @@ change the status into paid and when unpaid set the status
     the cost of the parcel is displayed using the weight
      of the parcel as indicated on the users' sender form
 */
+/*
+     my seeders
+     aboutsseeder
+     branchesseeder
+     companyseeder
+     navbarseeder
+     parcelseeder
+     servicesseeder
+     usernavseeder
 
+
+*/

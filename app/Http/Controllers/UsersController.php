@@ -28,10 +28,7 @@ class UsersController extends Controller
      {
         return view('support/prices');
      }
-     public function about(){
-        $abouts = DB::table('abouts')->get();
-        return view('support/abouts', ['abouts' => $abouts]);
-     }
+
      public function contactus(){
          return view('support/contactus');
      }
@@ -68,7 +65,7 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
     ]);
-    //    auth()->attempt($request->only('email', 'password'));
+
         return redirect()->route('login');
     }
 

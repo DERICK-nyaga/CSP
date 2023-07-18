@@ -7,9 +7,6 @@
 <div class="contact-page">
     <h1 class="text-center">Our Branch Info</h1>
 </div>
-
-
-
         @foreach ($abouts as $key => $about)
         <div id="float" class="one">
         <div class="inside">

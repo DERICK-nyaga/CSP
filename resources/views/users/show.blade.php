@@ -14,16 +14,14 @@
           </tr>
         </thead>
         <tbody class="table-group-divider">
-          
-            {{-- {{ $branches = $company->branches }} --}}
         <tr>
             @foreach($branches as $branch)
             <th scope="row">{{ $branch->id }}</th>
-            <td><a href="#">{{ $branch->branchname }}</a></td>
-            <td><a href="#{{ route('singlecompany', $branch->id) }}">visit me&rarr;</a></td>
+            <td><a href="{{ $branch->id }}">{{ $branch->branchname }}</a></td>
+            <td><a href="{{ route('singlecompany', $branch->id) }}">visit me&rarr;</a></td>
         </tr>
             @endforeach
-      
+
         </tbody>
       </table>
 

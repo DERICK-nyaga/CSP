@@ -19,7 +19,7 @@ class Company extends Model
         return $this->hasMany(Branches::class);
     }
     public function abouts(){
-        return $this->hasOne(Abouts::class);
+        return $this->hasOne(About::class);
     }
     public function services(){
         return $this->hasOne(Services::class);

@@ -17,6 +17,8 @@ class ParcelSeeder extends Seeder
             [
                 'companies_id' => '1',
                 'branch_id' => '1',
+                'user_id'=> '2', 
+                'parcel_id' => '3546',
                 'sender' => 'Nyaga',
                 'SenderContact' => '09898',
                 'receipient' => 'testing',
@@ -31,6 +33,8 @@ class ParcelSeeder extends Seeder
             [
                 'companies_id' => '2',
                 'branch_id' => '2',
+                'user_id' => '1',
+                'parcel_id' => '346',
                 'sender' => 'Colonel',
                 'SenderContact' => '098984',
                 'receipient' => 'testing',

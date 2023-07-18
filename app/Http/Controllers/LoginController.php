@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Symfony\Component\HttpFoundation\Session\Session;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,21 +19,19 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-        $this->validate($request, [
+       $userLogin = $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        if(!auth()->attempt($request->only('email','password'))){
+        if(!Auth::attempt($userLogin)){
             return back()->with('status', 'Invalid details');
         }else{
-              $user = Auth::user();
-              
-              return redirect()->route('homepage');
+            $request->session()->regenerate();
+            $user = Auth::user();
+                    //auth()->attempt($request->only('email', 'password'));
+
+            return redirect()->route('homepage')->with('user', $user);
         }
-
-
-
     }
 
 }

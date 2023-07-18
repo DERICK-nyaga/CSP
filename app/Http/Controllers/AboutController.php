@@ -13,12 +13,13 @@ class AboutController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(String $id):View
-    {
-        $company = DB::table('companies')->find($id);
-        $abouts = $company->abouts = DB::table('abouts')->where('companies_id',$id)->get();
-        // $abouts = DB::table('abouts')->get();
+
+     public function about(){
+        $abouts = DB::table('abouts')->get();
         return view('support/abouts', ['abouts' => $abouts]);
+     }
+    public function index()
+    {
     }
 
     /**

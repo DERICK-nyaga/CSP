@@ -526,3 +526,19 @@ label {
 .label-payment {
     margin-left: 1.5%;
 }
+.my-parcel {
+    width: 60%;
+    height: fit-content;
+    margin: 3% 20%;
+    background-color: #888888;
+}
+.p-head {
+    text-align: center;
+    background-color: #a9a9a9;
+
+}
+.my-parcel p {
+    color: #a52a2a;
+    font-size: 20px;
+    margin-left: 5%;
+}

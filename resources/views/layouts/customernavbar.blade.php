@@ -10,7 +10,7 @@
         <ul class="navbar-nav">
             @foreach ($usernav as $navbarItem)
             <li class="nav-item">
-                <a class="nav-link" href="{{ route($navbarItem->route) }}">
+                <a class="nav-link" href="{{ route($navbarItem->route)}}">
                     {{ $navbarItem->name }}</a>
             </li>
         @endforeach

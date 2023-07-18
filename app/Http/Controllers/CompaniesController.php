@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\Branches;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 class CompaniesController extends Controller
@@ -15,6 +17,7 @@ class CompaniesController extends Controller
      */
     public function index(): View
     {
+                    // dd(Auth::user()->lname);
         $companies = DB::table('companies')->get();
         return view('users/index', ['companies' => $companies]);
     }
@@ -67,8 +70,7 @@ class CompaniesController extends Controller
      */
     public function show(string $id)
     {
-        // $company = DB::table('companies')->find($id);
-         $branches = Branches::where('companies_id',$id)->get();
+        $branches = Branches::where('companies_id',$id)->get();
         return view('users.show')->with('branches', $branches);
     }
 

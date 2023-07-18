@@ -22,7 +22,7 @@ Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
 Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('contacts');
 
-Route::get('/about', [UsersController::class, 'about'])->name('abouts');
+Route::get('/about', [AboutController::class, 'about'])->name('abouts');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
 Route::get('/users/home', [CompaniesController::class, 'index'])->name('companies');
@@ -30,6 +30,7 @@ Route::get('/allbranches', [BranchesController::class, 'index'])->name('allbranc
 Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
 Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('singlecompany');
 
+Route::get('/myparcels', [ParcelController::class, 'myparcels'])->name('myparcels');
 Route::get('/send', [ParcelController::class, 'create'])->name('parcels');
 Route::post('/parcels', [ParcelController::class, 'store']);
 

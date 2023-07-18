@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('parcels', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('branch_id');
+            $table->unsignedInteger('user_id');
+            $table->integer('parcel_id');
             $table->unsignedInteger('companies_id');
             $table->string('sender');
             $table->string('SenderContact');
@@ -25,10 +27,10 @@ return new class extends Migration
             $table->string('DeliveryAddress');
             $table->string('payment');
             $table->string('price');
-            // $table->foreign('branches_id')
-            // ->references('companies_id')
-            // ->on('branches')
-            // ->onDelete('cascade');
+            $table->foreign('branches_id')
+            ->references('companies_id')
+            ->on('branches')
+            ->onDelete('cascade');
             $table->timestamps();
         });
 
