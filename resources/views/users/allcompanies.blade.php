@@ -2,7 +2,7 @@
 
 @section('title', 'List of Companies')
 @section('content')
-  @include('partials.customernavbar')
+  @include('layouts.customernavbar')
 
 <table class="table table-hover table-responsive table-bordered">
     <thead>

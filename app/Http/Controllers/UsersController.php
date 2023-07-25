@@ -54,10 +54,11 @@ class UsersController extends Controller
             'username' => 'required|min:2|max:100',
             'email'=> 'required|email|max:150|unique:users',
             'mobile'=> 'required',
-            'password' => 'required|min:6|max:16|confirmed',
+            'password' => 'required|min:6|max:16',
+            'cpassword' => 'required|same:password',
         ]);
 
-       User::create([
+     $user = User::create([
             'fname' => $request->input('fname'),
             'lname' => $request->input('lname'),
             'username' => $request->input('username'),
@@ -65,8 +66,8 @@ class UsersController extends Controller
             'mobile' => $request->input('mobile'),
             'password' => Hash::make($request->newPassword),
     ]);
-
-        return redirect()->route('login');
+        auth()->login($user);
+        return redirect()->route('login')->with('success', 'Account was successfully created');
     }
 
     /**

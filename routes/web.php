@@ -8,7 +8,7 @@ use App\Http\Controllers\ParcelController;
 use App\Http\Controllers\CompaniesController;
 use App\Http\Controllers\CompanyMenuController;
 use App\Http\Controllers\UserNavController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ResetPasswordController;
 
@@ -18,7 +18,7 @@ Route::get('/register', [UsersController::class, 'create'])->name('register');
 Route::get('/homepage', [CompaniesController::class, 'index'])->name('homepage');
 Route::post('/users', [UsersController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/auth', [LoginController::class,'authenticate']);
 Route::get('/home', [UserNavController::class, 'home'])->name('home');
 Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
@@ -59,3 +59,6 @@ Route::get('/reset-password', [ResetPasswordController::class, 'index'])->name('
 Route::post('/reset-password/{id}', [ResetPasswordController::class, 'update'])->name('update-password');
 
 // have a page where when I click on prices it selects all companies prices and displays them for a user..
+// Auth::routes('/auth', [App\Http\Controllers\Auth\LoginController::class,]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

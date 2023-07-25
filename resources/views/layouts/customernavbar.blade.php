@@ -14,6 +14,14 @@
                     {{ $navbarItem->name }}</a>
             </li>
         @endforeach
+    @auth
+        <li class="nav-item"><a class="nav-link" href="#username">Username</a></li>
+        <li class="nav-item"><a class="nav-link" href="#logout">Logout</a></li>
+    @endauth
+    @guest()
+    <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+    <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+    @endguest
         </ul>
       </div>
     </div>

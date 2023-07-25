@@ -8,15 +8,23 @@
     <div>
         <h1 class="text-center">Login Here</h1>
     </div>
-    <form action="/login" method="POST">
+    <form action="{{ route('authenticate') }}" method="POST">
         @csrf
 
         <div class="f-groups">
         <input class="inputs" type="email" name="email" placeholder="Kindly provide the right email address" value="{{ old('email') }}">
+
+        @if($errors->has('email'))
+        <span class="text-danger">{{ $errors->first('email') }}</span>
+        @endif
       </div>
 
         <div class="f-groups">
         <input class="inputs" type="password" name="password" placeholder="Kindly set a strong password" value="">
+
+        @if($errors->has('password'))
+        <span class="text-danger">{{ $errors->first('password') }}</span>
+        @endif
       </div>
 
       <div class="register">

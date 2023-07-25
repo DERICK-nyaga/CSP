@@ -17,9 +17,11 @@ class CompaniesController extends Controller
      */
     public function index(): View
     {
-                    // dd(Auth::user()->lname);
+        // if(Auth::check()){
         $companies = DB::table('companies')->get();
         return view('users/index', ['companies' => $companies]);
+        // }
+        // return redirect("login")->withSuccess('You are not allowed to access');
     }
 
     public function branch(){
