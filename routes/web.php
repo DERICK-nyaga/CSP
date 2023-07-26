@@ -14,11 +14,11 @@ use App\Http\Controllers\ResetPasswordController;
 
 
 Route::view('', 'users.splashpage');
-Route::get('/register', [UsersController::class, 'create'])->name('register');
+// Route::get('/register', [UsersController::class, 'create'])->name('register');
 Route::get('/homepage', [CompaniesController::class, 'index'])->name('homepage');
-Route::post('/users', [UsersController::class, 'store']);
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/auth', [LoginController::class,'authenticate']);
+// Route::post('/users', [UsersController::class, 'store']);
+// Route::get('/login', [LoginController::class, 'index'])->name('login');
+// Route::post('/auth', [LoginController::class,'authenticate']);
 Route::get('/home', [UserNavController::class, 'home'])->name('home');
 Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
@@ -62,3 +62,7 @@ Route::post('/reset-password/{id}', [ResetPasswordController::class, 'update'])-
 // Auth::routes('/auth', [App\Http\Controllers\Auth\LoginController::class,]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login',[App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login',[App\Http\Controllers\Auth\LoginController::class, 'login']);
+Route::get('/register',[App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register',[App\Http\Controllers\Auth\RegisterController::class, 'register']);

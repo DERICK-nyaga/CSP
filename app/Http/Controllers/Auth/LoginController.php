@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
-
+use App\Models\User;
 class LoginController extends Controller
 {
     /*
@@ -24,27 +24,28 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-        public function index()
-    {
-        return view('users/login');
-    }
-    public function authenticate(Request $request): RedirectResponse
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
- 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
- 
-            return redirect()->intended('homepage');
-        }
- 
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
-    }
+    //     public function index()
+    // {
+    // //   return redirect()->route('login);
+    // return view('auth/login');
+    // }
+    // public function authenticate(Request $request): RedirectResponse
+    // {
+    //     $credentials = $request->validate([
+    //         'email' => ['required', 'email'],
+    //         'password' => ['required'],
+    //     ]);
+
+    //     if (Auth::attempt($credentials)) {
+    //         $request->session()->regenerate();
+
+    //         return redirect()->intended('homepage');
+    //     }
+
+    //     return back()->withErrors([
+    //         'email' => 'The provided credentials do not match our records.',
+    //     ])->onlyInput('email');
+    // }
     /**
      * Where to redirect users after login.
      *
