@@ -15,8 +15,10 @@
             </li>
         @endforeach
     @auth
-        <li class="nav-item"><a class="nav-link" href="#username">Username</a></li>
-        <li class="nav-item"><a class="nav-link" href="#logout">Logout</a></li>
+    <div class="f-right">
+        <li class="nav-item"><a class="nav-link" href="#username">{{ auth()->user()->username }}</a></li>
+        <li class="nav-item"><form action="{{ route('logout') }}" method="post"><button class="btn btn-danger" type="submit">Logout</button></form></li>
+    </div>
     @endauth
     @guest()
     <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>

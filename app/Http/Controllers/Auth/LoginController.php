@@ -24,34 +24,12 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    //     public function index()
-    // {
-    // //   return redirect()->route('login);
-    // return view('auth/login');
-    // }
-    // public function authenticate(Request $request): RedirectResponse
-    // {
-    //     $credentials = $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => ['required'],
-    //     ]);
-
-    //     if (Auth::attempt($credentials)) {
-    //         $request->session()->regenerate();
-
-    //         return redirect()->intended('homepage');
-    //     }
-
-    //     return back()->withErrors([
-    //         'email' => 'The provided credentials do not match our records.',
-    //     ])->onlyInput('email');
-    // }
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
