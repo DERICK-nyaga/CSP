@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-  @include('layouts.customernavbar')
-
-<table class="table table-hover table-responsive table-bordered">
+  @include('layouts.companymenu')
+  
+{{-- <table class="table table-hover table-responsive table-bordered">
     <thead>
       <tr>
         <th scope="col">List</th>
@@ -21,5 +21,5 @@
             @endforeach
         @endif
     </tbody>
-  </table>
+  </table> --}}
 @endsection
