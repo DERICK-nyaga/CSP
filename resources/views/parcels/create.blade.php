@@ -8,10 +8,11 @@
     <div>
         <h1 class="text-center">Send Parcel form</h1>
     </div>
-<form action="/parcels" method="POST" class="row g-3">
+<form action="/parcel" method="POST" class="row g-3">
     @csrf
-
-        <input name="status" type="hidden" class="form-control" placeholder="This will set the cost" value="">
+    {{-- <input type="hidden" name="parcel_id" value="{{ $trackingnumber }}"> --}}
+    {{-- on selecting the company you desire to use it should store that value in a variable and use it to diplay related branches --}}
+        <input name="user_id" type="hidden" class="form-control" placeholder="This will set user_id" value="{{ auth()->user()->id }}">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Sender name:</label>
     <input name="sender" type="text" class="form-control" placeholder="Your own real name">
@@ -38,21 +39,20 @@
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Pickup Location:</label>
-    <input type="text" name="PickupStation" class="form-control" placeholder="The desired pickup location or town">
+    <input type="text" name="PickupStation" class="form-control" placeholder="The desired pickup location or town share on google maps ">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Delivery Address:</label>
     <input type="text" name="DeliveryAddress" class="form-control" placeholder="The delivery address of the parcel">
   </div>
+
 <div class="col-md-6">
     <label for="town" class="form-label">Select a Town Near You:</label>
     <select name="branch" class="form-select form-control" aria-label="Default select example">
         <option selected>Select your Current Town</option>
-        <option value="Embu">Embu</option>
-        <option value="Emali">Emali</option>
-        <option value="Kajiando">Kajiando</option>
-        <option value="Nairobi">Nairobi CBD</option>
-        <option value="Mombasa">Mombasa</option>
+    @foreach($branches as $key => $branch)
+        <option value="$branch->branchname">{{ $branch->branchname}}</option>
+    @endforeach
       </select>
 </div>
 

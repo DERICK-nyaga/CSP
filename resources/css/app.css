@@ -502,7 +502,7 @@ label {
 .ml{
     margin-left: 5.9%;
 }
-.splash {
+/* .splash {
     display: flex;
     flex-wrap: wrap;
     margin-top: 15%;
@@ -511,7 +511,7 @@ label {
 .splash-btn{
     padding: 10px;
     margin-left: 25%;
-}
+} */
 #flexRadioDefault1 {
     margin-left: 2%;
 }

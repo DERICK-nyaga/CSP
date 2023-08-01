@@ -14,11 +14,7 @@ use App\Http\Controllers\ResetPasswordController;
 
 
 Route::view('', 'users.splashpage');
-// Route::get('/register', [UsersController::class, 'create'])->name('register');
-Route::get('/homepage', [CompaniesController::class, 'index'])->name('homepage');
-// Route::post('/users', [UsersController::class, 'store']);
-// Route::get('/login', [LoginController::class, 'index'])->name('login');
-// Route::post('/auth', [LoginController::class,'authenticate']);
+Route::get('/homepage', [CompaniesController::class, 'index'])->name('homepage')->middleware('auth');
 Route::get('/home', [UserNavController::class, 'home'])->name('home');
 Route::get('/support/about', [UserNavController::class, 'abouts'])->name('abouts');
 Route::get('/support/prices', [UserNavController::class, 'prices'])->name('prices');
@@ -27,7 +23,7 @@ Route::get('/support/contactus', [UserNavController::class, 'contacts'])->name('
 Route::get('/about', [AboutController::class, 'about'])->name('abouts');
 Route::get('/prices', [UsersController::class, 'prices'])->name('prices');
 Route::get('/contactus', [UsersController::class, 'contactus'])->name('contacts');
-Route::get('/users/home', [CompaniesController::class, 'index'])->name('companies');
+Route::get('/users/home', [CompaniesController::class, 'index'])->name('companies')->middleware('auth');
 Route::get('/users/company', [CompaniesController::class, 'branch'])->name('visit company');
 Route::get('/allbranches', [BranchesController::class, 'index'])->name('allbranches');
 Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('listcompanies');
@@ -35,7 +31,9 @@ Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('s
 
 Route::get('/myparcels', [ParcelController::class, 'myparcels'])->name('myparcels');
 Route::get('/send', [ParcelController::class, 'create'])->name('parcels');
-Route::post('/parcels', [ParcelController::class, 'store']);
+Route::get('/pricing', [ParcelController::class, 'claculatePrice'])->name('checkout');
+Route::post('/checkout', [ParcelController::class, 'checkout']);
+Route::post('/parcel', [ParcelController::class, 'store']);
 
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');
 Route::get('/company/register', [CompaniesController::class, 'create'])->name('company');

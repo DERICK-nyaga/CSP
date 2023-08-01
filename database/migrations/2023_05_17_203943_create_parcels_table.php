@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('PickupStation');
             $table->string('DeliveryAddress');
             $table->string('payment');
-            $table->string('price');
+            $table->float('price');
             $table->foreign('branches_id')
             ->references('companies_id')
             ->on('branches')

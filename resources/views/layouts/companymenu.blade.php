@@ -12,11 +12,16 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('abouts') }}">About us</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('contacts') }}">Contact us</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('prices') }}">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('parcels') }}">Send Parcel</a></li>
+            <li class="nav-item"><a class="nav-link" href="/send/{id}/parcel">Send Parcel</a></li>
             <li class="nav-item"><a class="nav-link" href="#{{ route('home') }}">My parcels</a></li>
             @auth
                 <li class="nav-item"><a class="nav-link" href="#username">{{ auth()->user()->username }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('logout') }}">Logout</a></li>
+                <li class="nav-item">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </li>
             @endauth
             @guest()
             <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>

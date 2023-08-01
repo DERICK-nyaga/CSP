@@ -6,7 +6,7 @@ use App\Models\Parcel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Branches;
-
+use App\Models\Company;
 class ParcelController extends Controller
 {
     /**
@@ -25,7 +25,11 @@ class ParcelController extends Controller
      */
     public function create()
     {
-        return view('parcels.create');
+        // customize to only fetch branch by company id seleceted only
+        $companies = Company::all();
+        // $branches = Branches::where('companies_id',$id )->get();
+        $branches = DB::table('branches')->get();
+        return view('parcels.create',['branches' => $branches]);
     }
 
 
@@ -33,39 +37,38 @@ class ParcelController extends Controller
         return redirect()->route('checkout');
     }
     public function checkoutStore(){
-    // 
+    //
     }
     /**
-     *function to fill in user details
      *function to display a form with a checkout button with price on it
-
      */
     /**
      * Store a newly created resource in storage.
      */
-    public function claculatePrice($weight, $fragility) {
+    public function claculatePrice(Request $request) {
         $price = 0;
         $initialweight = 10;
-        if($weight <=0 && $weight >=10){
+        if($request->input('weight') <=0 && $request->input('weight') >=10){
             $price +=330;
         }
-        elseif($weight >10 && $weight >=45){
-            $price = (($weight - $initialweight)* 20) + 330;
+        elseif($request->input('weight') >10 && $request->input('weight') >=45){
+            $price = (($request->input('weight') - $initialweight)* 20) + 330;
         }
-        elseif($weight >45 && $weight <= 100){
-            $price = (($weight - $initialweight)* 30) + 330;
+        elseif($request->input('weight') >45 && $request->input('weight') <= 100){
+            $price = (($request->input('weight')- $initialweight)* 30) + 330;
         }
         else{
             return redirect()->route('parcels')->withErrors('The weight is above what we transit');
         }
-        if($fragility === 'tv'|| 'woofer' || 'fridge' || 'microwave') {
-            $price = (($weight - $initialweight) * 50) + 499;
-        }
+        // if($fragility === 'tv'|| 'woofer' || 'fridge' || 'microwave') {
+        //     $price = (($weight - $initialweight) * 50) + 499;
+        // }
     }
 
-    public function store(Request $request)
+    public function store(Request  $request)
     {
         $data = request()->validate([
+            'user_id',
             'branch' => 'required',
             'sender' => 'required',
             'SenderContact' => 'required',
@@ -79,8 +82,8 @@ class ParcelController extends Controller
             'price' => 'required',
 
         ]);
+        
         Parcel::create($data);
-
         return redirect()->route('parcels');
     }
     /**
@@ -88,7 +91,7 @@ class ParcelController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**

@@ -64,3 +64,8 @@ if ($fragile && $weight <=10){ $price=300; } else if ($fragile && $weight>10 && 
 
 
                         <!-- Hash::check('INPUT PASSWORD', $user->password); -->
+                        <!-- calculate the price of a parcel based on distance weight and also the
+                                fragility of the parcel.
+                                then submit back with a redirect and a json response upon successful submission of the form.
+                                
+                     -->
