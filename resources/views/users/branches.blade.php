@@ -2,7 +2,7 @@
 @section('content')
   @include('layouts.companymenu')
   
-{{-- <table class="table table-hover table-responsive table-bordered">
+<table class="table table-hover table-responsive table-bordered">
     <thead>
       <tr>
         <th scope="col">List</th>
@@ -21,5 +21,5 @@
             @endforeach
         @endif
     </tbody>
-  </table> --}}
+  </table>
 @endsection
