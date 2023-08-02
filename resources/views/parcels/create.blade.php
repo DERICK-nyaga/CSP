@@ -6,7 +6,7 @@
 @include('layouts.customernavbar')
 <div class="online-booking">
     <div>
-        <h1 class="text-center">Send Parcel form</h1>
+        <h1 class="text-center">User-input form</h1>
     </div>
 <form action="/parcel" method="POST" class="row g-3">
     @csrf
@@ -32,10 +32,6 @@
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Your town:</label>
     <input type="text" name="town" class="form-control" placeholder="The dropoff location">
-  </div>
-  <div class="col-md-6">
-    <label for="weight" class="form-label">Parcel Weight:</label>
-    <input type="text" name="weight" class="form-control" placeholder="The weight of the parcel in kilograms">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Pickup Location:</label>

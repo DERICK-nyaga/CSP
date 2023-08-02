@@ -31,8 +31,10 @@ Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('s
 
 Route::get('/myparcels', [ParcelController::class, 'myparcels'])->name('myparcels');
 Route::get('/send', [ParcelController::class, 'create'])->name('parcels');
-Route::get('/pricing', [ParcelController::class, 'claculatePrice'])->name('checkout');
-Route::post('/checkout', [ParcelController::class, 'checkout']);
+Route::get('/costing', [ParcelController::class, 'weightform'])->name('costing');
+Route::post('/costing', [ParcelController::class, 'claculatePrice']);
+// Route::get('/pricing', [ParcelController::class, 'claculatePrice'])->name('checkout');
+// Route::post('/checkout', [ParcelController::class, 'checkout']);
 Route::post('/parcel', [ParcelController::class, 'store']);
 
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');
