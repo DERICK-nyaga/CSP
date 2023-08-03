@@ -68,7 +68,7 @@
   {{-- output the branches attached to the current select company --}}
 
   <div class="col-12">
-    <button type="submit" id="button" class="btn btn-primary">Submit</button>
+    <button type="submit" id="button" class="btn btn-primary">Next</button>
   </div>
 
 </form>

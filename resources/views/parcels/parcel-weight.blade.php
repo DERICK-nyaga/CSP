@@ -8,7 +8,7 @@
     <div>
         <h1 class="text-center">User-input form</h1>
     </div>
-<form action="/costCalculation" method="POST" class="row g-3">
+<form action="/costing" method="POST" class="row g-3">
     @csrf
     {{-- <input type="hidden" name="parcel_id" value="{{ $trackingnumber }}"> --}}
     {{-- calculate  the shipment cost --}}
