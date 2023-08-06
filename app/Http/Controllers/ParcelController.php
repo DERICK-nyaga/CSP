@@ -66,25 +66,22 @@ class ParcelController extends Controller
         $price = 0;
         $initialweight = 10;
         $data = $request->session()->get('data');
-        if($data->request->input('weight') <=0 && $request->input('weight') >=10){
+        if($request->input('weight') <=0 && $request->input('weight') >=10){
             $price += 330;
-            $request->price->storeAs('price',$price);
             $data = $request()->session()->get('data');
-            $data->price = $price;
+            $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
        }
-        elseif($data->request->input('weight') >10 && $request->input('weight') >=45){
+        elseif($request->input('weight') >10 && $request->input('weight') >=45){
             $price = (($request->input('weight') - $initialweight)* 20) + 330;
-            $request->price->storeAs('price',$price);
             $data = $request->session()->get('data');
-            $data->price = $price;
+            $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
         }
-        elseif($data->request->input('weight') >45 && $request->input('weight') <= 100){
+        elseif($request->input('weight') >45 && $request->input('weight') <= 100){
             $price = (($request->input('weight')- $initialweight)* 30) + 330;
-            $request->price->storeAs('price',$price);
             $data = $request->session()->get('data');
-            $data->price = $price;
+            $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
         }
         elseif($request->input('weight') > 100){
