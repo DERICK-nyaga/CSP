@@ -11,7 +11,6 @@
 <form action="/parcel" method="POST" class="row g-3">
     @csrf
     {{-- <input type="hidden" name="parcel_id" value="{{ $trackingnumber }}"> --}}
-    {{-- on selecting the company you desire to use it should store that value in a variable and use it to diplay related branches --}}
         <input name="user_id" type="hidden" class="form-control" placeholder="This will set user_id" value="{{ auth()->user()->id }}">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Sender name:</label>
