@@ -30,12 +30,14 @@ Route::get('/allcompanies', [UsersController::class, 'allcompanies'])->name('lis
 Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('singlecompany');
 
 Route::get('/myparcels', [ParcelController::class, 'myparcels'])->name('myparcels');
+// route for user inputs
 Route::get('/send', [ParcelController::class, 'create'])->name('parcels');
 Route::get('/costing', [ParcelController::class, 'weightform'])->name('costing');
 Route::post('/costing', [ParcelController::class, 'claculatePrice']);
 // Route::get('/pricing', [ParcelController::class, 'claculatePrice'])->name('checkout');
 // Route::post('/checkout', [ParcelController::class, 'checkout']);
 Route::post('/parcel', [ParcelController::class, 'store']);
+
 
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');
 Route::get('/company/register', [CompaniesController::class, 'create'])->name('company');

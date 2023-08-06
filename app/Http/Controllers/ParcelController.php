@@ -32,7 +32,32 @@ class ParcelController extends Controller
         return view('parcels.create',['branches' => $branches]);
     }
 
+    public function userInput(Request $request){
+        $validatedData = request()->validate([
+            'user_id',
+            'branch' => 'required',
+            'sender' => 'required',
+            'SenderContact' => 'required',
+            'receipient' => 'required',
+            'ReceipientContact' => 'required',
+            'town' => 'required',
+            'PickupStation' => 'required',
+            'DeliveryAddress' => 'required',
 
+        ]);
+        if(empty($request->session()->get('data'))){
+            $data = new Parcel();
+            $data->fill($validatedData);
+            $request->session()->put('data', $data);
+        }
+        else{
+            $data = $request->session()->get('data');
+            $data->fill($validatedData);
+            $request->session()->put('data', $data);
+        }
+        $data = $request->session()->get('data');
+        return redirect()->route('costing');
+    }
     public function checkoutCreate(){
         return redirect()->route('checkout');
     }
@@ -83,32 +108,6 @@ class ParcelController extends Controller
 
     public function store(Request  $request)
     {
-        $validatedData = request()->validate([
-            'user_id',
-            'branch' => 'required',
-            'sender' => 'required',
-            'SenderContact' => 'required',
-            'receipient' => 'required',
-            'ReceipientContact' => 'required',
-            'town' => 'required',
-            'weight' => 'required',
-            'PickupStation' => 'required',
-            'DeliveryAddress' => 'required',
-            'payment' => 'required',
-            'price' => 'required',
-
-        ]);
-        if(empty($request->session()->get('data'))){
-            $data = new Parcel();
-            $data->fill($validatedData);
-            $request->session()->put('data', $data);
-        }
-        else{
-            $data = $request->session()->get('data');
-            $data->fill($validatedData);
-            $request->session()->put('data', $data);
-        }
-        //redirect to next step carry code below and paste in step3
         $data = $request->session()->get('data');
         Parcel::create($data);
         return redirect()->route('parcels');
@@ -120,7 +119,6 @@ class ParcelController extends Controller
     {
 
     }
-
     /**
      * Show the form for editing the specified resource.
      */
