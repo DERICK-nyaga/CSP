@@ -6,28 +6,21 @@
 @include('layouts.customernavbar')
 
 <div class="show-price">
-    <form action="{{ route('') }}" method="post">
-        <div class="modal-body">
-            <h2 class="fs-5">this will display the price dynamically</h2>
-            <p>This <button class="btn btn-secondary" data-bs-toggle="popover" title="Popover title" data-bs-content="Popover body content is set in this attribute.">button</button> triggers a popover on click.</p>
-
-            <h2 class="fs-5">Tooltips in a modal</h2>
-            <p><a href="#" data-bs-toggle="tooltip" title="Tooltip">This link</a> and <a href="#" data-bs-toggle="tooltip" title="Tooltip">that link</a> have tooltips on hover.</p>
-          </div>
+    <form action="{{ route('') }}" method="POST">
+<h2>{{ $data->price }}</h2>
+    <label for="inputCity" class="label-payment">Payment Method:</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1" value="now" checked>
+      <label class="form-check-label" for="flexRadioDefault1">
+        Now
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault2"  value="onDelivery">
+      <label class="form-check-label" for="flexRadioDefault2">
+        On Delivery
+      </label>
+    </div>
     </form>
 </div>
-<label for="inputCity" class="label-payment">Payment Method:</label>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault1" value="now" checked>
-  <label class="form-check-label" for="flexRadioDefault1">
-    Now
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="payment" id="flexRadioDefault2"  value="onDelivery">
-  <label class="form-check-label" for="flexRadioDefault2">
-    On Delivery
-  </label>
-</div>
-
 @endsection

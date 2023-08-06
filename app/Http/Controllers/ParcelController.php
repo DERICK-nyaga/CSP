@@ -84,11 +84,8 @@ class ParcelController extends Controller
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
         }
-        elseif($request->input('weight') > 100){
-            return redirect()->route('parcels')->withErrors('The weight is above what we transit');
-        }
         else{
-        //return a checkout form view
+            return redirect()->route('parcels');
         }
         // if($fragility === 'tv'|| 'woofer' || 'fridge' || 'microwave') {
         //     $price = (($weight - $initialweight) * 50) + 499;
