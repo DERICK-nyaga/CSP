@@ -22,6 +22,11 @@
         On Delivery
       </label>
     </div>
+
+    <div class="col-12">
+        <button type="submit" id="button" class="btn btn-primary">Submit</button>
+      </div>
+    
     </form>
 </div>
 @endsection
