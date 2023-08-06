@@ -119,13 +119,13 @@ class ParcelController extends Controller
         $request->session()->put('data',$data);
     }
     
-    public function checkoutCreate(){
-        return redirect()->route('checkout');
-    }
+    // public function checkoutCreate(){
+    //     return redirect()->route('checkout');
+    // }
 
-    public function checkoutStore(){
-        //
-        }
+    // public function checkoutStore(){
+    //     //
+    //     }
     public function store(Request  $request)
     {
         $data = $request->session()->get('data');

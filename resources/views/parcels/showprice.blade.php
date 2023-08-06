@@ -7,7 +7,7 @@
 
 <div class="show-price">
     <form action="{{ route('checkout') }}" method="POST">
-        <h2>{{ $data->price }}</h2>
+        <h2 class="text-center">You will pay{{ $data->price }}</h2>
         <input type="hidden" name="price" value="{{ $data->price }}">
     <label for="inputCity" class="label-payment">Payment Method:</label>
     <div class="form-check">
@@ -24,7 +24,7 @@
     </div>
 
     <div class="col-12">
-        <button type="submit" id="button" class="btn btn-primary">Submit</button>
+        <button type="submit" id="price-button" class="btn btn-primary">Submit</button>
       </div>
     
     </form>

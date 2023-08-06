@@ -213,7 +213,7 @@ input[type=text]:focus{
     align-items: center;
     position: relative;
 }
-.btn{
+/* .btn{
     margin-top: 6px;
     margin-bottom: 6px;
     display: block;
@@ -235,7 +235,7 @@ input[type=text]:focus{
     animation-fill-mode: forwards;
     transition-property: transform;
     transition-duration: 1s;
-}
+} */
 .container-fluid{
     margin-left: 5%;
 }
@@ -555,4 +555,15 @@ label {
 }
 .f-right .nav-item{
     float: left;
+}
+.show-price {
+    width: 40%;
+    height: max-content;
+    margin: 5% auto;
+    background-color: #eee;
+    border-radius: 8px;
+}
+#price-button {
+    width: 100%;
+    margin-top: 10px;
 }
