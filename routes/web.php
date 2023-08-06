@@ -31,7 +31,7 @@ Route::get('/users/{id}/company', [CompaniesController::class, 'show'])->name('s
 
 Route::get('/myparcels', [ParcelController::class, 'myparcels'])->name('myparcels');
 // route for user inputs
-Route::get('/send', [ParcelController::class, 'create'])->name('parcels');
+Route::get('/parcel', [ParcelController::class, 'create'])->name('parcels');
 Route::post('/parcel', [ParcelController::class, 'userInput']);
 Route::get('/costing', [ParcelController::class, 'weightform'])->name('weightInput');
 Route::post('/costing', [ParcelController::class, 'claculatePrice']);
