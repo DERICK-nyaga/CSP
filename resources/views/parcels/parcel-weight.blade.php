@@ -6,12 +6,10 @@
 @include('layouts.customernavbar')
 <div class="online-booking">
     <div>
-        <h1 class="text-center">User-input form</h1>
+        <h1 class="text-center">Weight-input form</h1>
     </div>
 <form action="/costing" method="POST" class="row g-3">
     @csrf
-    {{-- <input type="hidden" name="parcel_id" value="{{ $trackingnumber }}"> --}}
-    {{-- calculate  the shipment cost --}}
         <input name="user_id" type="hidden" class="form-control" placeholder="This will set user_id" value="{{ auth()->user()->id }}">
   <div class="col-md-6">
     <label for="weight" class="form-label">Parcel Weight:</label>
