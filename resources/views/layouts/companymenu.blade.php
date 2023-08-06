@@ -12,7 +12,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('abouts') }}">About us</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('contacts') }}">Contact us</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('prices') }}">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link" href="/send/{id}/parcel">Send Parcel</a></li>
+            <li class="nav-item"><a class="nav-link" href="/parcel">Send Parcel</a></li>
             <li class="nav-item"><a class="nav-link" href="#{{ route('home') }}">My parcels</a></li>
             @auth
                 <li class="nav-item"><a class="nav-link" href="#username">{{ auth()->user()->username }}</a></li>
