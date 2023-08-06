@@ -62,6 +62,7 @@ class ParcelController extends Controller
     public function weightform(){
         return view('parcels.parcel-weight');
     }
+    
     public function calculatePrice(Request $request) {
         $price = 0;
         $initialweight = 10;
@@ -72,7 +73,7 @@ class ParcelController extends Controller
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('payment',['price', $price]);
+            return redirect()->route('parcel-cost',['price', $price]);
        }
         elseif($request->input('weight') >10 && $request->input('weight') >=45){
             $price = (($request->input('weight') - $initialweight)* 20) + 330;
@@ -80,7 +81,7 @@ class ParcelController extends Controller
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
             
-            return redirect()->route('payment',['price', $price]);
+            return redirect()->route('parcel-cost',['price', $price]);
             
         }
         elseif($request->input('weight') >45 && $request->input('weight') >= 100){
@@ -89,7 +90,7 @@ class ParcelController extends Controller
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('payment',['price', $price]);
+            return redirect()->route('parcel-cost',['price', $price]);
         }
         elseif($request->input('weight') >100){
             return redirect()->back();
@@ -103,7 +104,7 @@ class ParcelController extends Controller
         // }
     }
     
-    public function payment(Request $request){
+    public function cost(Request $request){
         $data = $request->session()->get('data');
         
         return view('parcels.showprice', ['data' => $data]);
@@ -117,6 +118,11 @@ class ParcelController extends Controller
         $data = $request->session()->get('data');
         $data->fill(['paymentmode' => $paymentmode]);
         $request->session()->put('data',$data);
+
+        // $data = $request->session()->get('data');
+        // Parcel::create($data);
+        // $request->session()->forget('data');
+        return redirect()->route('checkout');
     }
     
     // public function checkoutCreate(){
@@ -130,6 +136,7 @@ class ParcelController extends Controller
     {
         $data = $request->session()->get('data');
         Parcel::create($data);
+        $request->session()->forget('data');
         return redirect()->route('parcels');
     }
     /**
