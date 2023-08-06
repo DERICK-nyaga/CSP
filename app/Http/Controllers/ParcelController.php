@@ -109,8 +109,14 @@ class ParcelController extends Controller
         return view('parcels.showprice', ['data' => $data]);
     }
     
-    public function paymentMethod(Request $request){
-        
+    public function paymentMethod(Request $request){        
+        $paymentmode = request()->validate([
+            'price' => 'required',
+            'payment' => 'required',
+        ]);
+        $data = $request->session()->get('data');
+        $data->fill(['paymentmode' => $paymentmode]);
+        $request->session()->put('data',$data);
     }
     
     public function checkoutCreate(){
