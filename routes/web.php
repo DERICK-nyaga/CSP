@@ -36,7 +36,8 @@ Route::post('/parcel', [ParcelController::class, 'userInput']);
 Route::get('/costing', [ParcelController::class, 'weightform'])->name('weightInput');
 Route::post('/costing', [ParcelController::class, 'calculatePrice']);
 Route::get('/pricing', [ParcelController::class, 'calculatePrice'])->name('checkout');
-Route::get('/', [])->name('');
+Route::get('/payment', [ParcelController::class, 'payment'])->name('payment');
+Route::post('/payment', [ParcelController::class, 'paymentMethod']);
 // Route::post('/checkout', [ParcelController::class, 'checkout']);
 // Route::post('/parcel', [ParcelController::class, 'store']);
 

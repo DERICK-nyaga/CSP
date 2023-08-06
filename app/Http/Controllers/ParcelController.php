@@ -71,18 +71,25 @@ class ParcelController extends Controller
             $data = $request()->session()->get('data');
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
+
+            return redirect()->route('payment');
        }
         elseif($request->input('weight') >10 && $request->input('weight') >=45){
             $price = (($request->input('weight') - $initialweight)* 20) + 330;
             $data = $request->session()->get('data');
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
+            
+            return redirect()->route('payment');
+            
         }
         elseif($request->input('weight') >45 && $request->input('weight') <= 100){
             $price = (($request->input('weight')- $initialweight)* 30) + 330;
             $data = $request->session()->get('data');
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
+
+            return redirect()->route('payment');
         }
         else{
             return redirect()->route('parcels');
@@ -91,6 +98,14 @@ class ParcelController extends Controller
         //     $price = (($weight - $initialweight) * 50) + 499;
         // }
     }
+    
+    public function payment(){
+        return view('parcels.showprice');
+    }
+    
+    public function paymentMethod(Request $request){
+    }
+    
     public function checkoutCreate(){
         return redirect()->route('checkout');
     }
