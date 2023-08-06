@@ -72,7 +72,7 @@ class ParcelController extends Controller
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('payment');
+            return redirect()->route('payment',['price', $price]);
        }
         elseif($request->input('weight') >10 && $request->input('weight') >=45){
             $price = (($request->input('weight') - $initialweight)* 20) + 330;
@@ -80,30 +80,37 @@ class ParcelController extends Controller
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
             
-            return redirect()->route('payment');
+            return redirect()->route('payment',['price', $price]);
             
         }
-        elseif($request->input('weight') >45 && $request->input('weight') <= 100){
+        elseif($request->input('weight') >45 && $request->input('weight') >= 100){
             $price = (($request->input('weight')- $initialweight)* 30) + 330;
             $data = $request->session()->get('data');
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('payment');
+            return redirect()->route('payment',['price', $price]);
         }
-        else{
-            return redirect()->route('parcels');
+        elseif($request->input('weight') >100){
+            return redirect()->back();
         }
+        // return redirect()->route('payment',['price', $price]);
+        // else{
+        //     return redirect()->route('parcels');
+        // }
         // if($fragility === 'tv'|| 'woofer' || 'fridge' || 'microwave') {
         //     $price = (($weight - $initialweight) * 50) + 499;
         // }
     }
     
-    public function payment(){
-        return view('parcels.showprice');
+    public function payment(Request $request){
+        $data = $request->session()->get('data');
+        
+        return view('parcels.showprice', ['data' => $data]);
     }
     
     public function paymentMethod(Request $request){
+        
     }
     
     public function checkoutCreate(){
