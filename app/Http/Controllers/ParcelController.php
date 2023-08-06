@@ -56,17 +56,9 @@ class ParcelController extends Controller
             $request->session()->put('data', $data);
         }
         $data = $request->session()->get('data');
-        return redirect()->route('costing');
+        return redirect()->route('weightInput');
     }
-    public function checkoutCreate(){
-        return redirect()->route('checkout');
-    }
-    public function checkoutStore(){
-    //
-    }
-    /**
-     *function to display a form with a checkout button with price on it
-     */
+
     public function weightform(){
         return view('parcels.parcel-weight');
     }
@@ -105,7 +97,13 @@ class ParcelController extends Controller
         //     $price = (($weight - $initialweight) * 50) + 499;
         // }
     }
+    public function checkoutCreate(){
+        return redirect()->route('checkout');
+    }
 
+    public function checkoutStore(){
+        //
+        }
     public function store(Request  $request)
     {
         $data = $request->session()->get('data');
