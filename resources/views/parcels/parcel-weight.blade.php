@@ -10,7 +10,7 @@
     </div>
 <form action="/costing" method="POST" class="row g-3">
     @csrf
-        <input name="user_id" type="hidden" class="form-control" placeholder="This will set user_id" value="{{ auth()->user()->id }}">
+        {{-- <input name="user_id" type="hidden" class="form-control" placeholder="This will set user_id" value="{{ auth()->user()->id }}"> --}}
   <div class="col-md-6">
     <label for="weight" class="form-label">Parcel Weight:</label>
     <input type="text" name="weight" class="form-control" placeholder="The weight of the parcel in kilograms">

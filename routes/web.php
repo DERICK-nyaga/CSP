@@ -11,7 +11,7 @@ use App\Http\Controllers\UserNavController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\ResetPasswordController;
-
+use App\Models\ParcelCategory;
 
 Route::view('', 'users.splashpage');
 Route::get('/homepage', [CompaniesController::class, 'index'])->name('homepage')->middleware('auth');
@@ -37,9 +37,8 @@ Route::get('/costing', [ParcelController::class, 'weightform'])->name('weightInp
 Route::post('/costing', [ParcelController::class, 'calculatePrice']);
 Route::get('/parcel-cost', [ParcelController::class, 'cost'])->name('parcel-cost');
 Route::post('/parcel-cost', [ParcelController::class, 'paymentMethod']);
-Route::post('/checkout', [ParcelController::class, 'store'])->name('checkout');
-// Route::post('/parcel', [ParcelController::class, 'store']);
-
+Route::get('/checkout', [ParcelController::class, 'checkout'])->name('checkout');
+Route::post('/checkout', [ParcelController::class, 'store']);
 
 Route::get('/companies', [CompaniesController::class, 'index'])->name('companies');
 Route::get('/company/register', [CompaniesController::class, 'create'])->name('company');

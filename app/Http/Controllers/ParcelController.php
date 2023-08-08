@@ -67,7 +67,7 @@ class ParcelController extends Controller
         $price = 0;
         $initialweight = 10;
         $data = $request->session()->get('data');
-        if($request->input('weight') <=0 && $request->input('weight') >=10){
+        if($request->input('weight') >0 && $request->input('weight') <=10){
             $price += 330;
             $data = $request()->session()->get('data');
             $data->fill(['price' => $price]);
@@ -75,7 +75,7 @@ class ParcelController extends Controller
 
             return redirect()->route('parcel-cost',['price', $price]);
        }
-        elseif($request->input('weight') >10 && $request->input('weight') >=45){
+        elseif($request->input('weight') >10 && $request->input('weight') <=45){
             $price = (($request->input('weight') - $initialweight)* 20) + 330;
             $data = $request->session()->get('data');
             $data->fill(['price' => $price]);
@@ -84,7 +84,7 @@ class ParcelController extends Controller
             return redirect()->route('parcel-cost',['price', $price]);
             
         }
-        elseif($request->input('weight') >45 && $request->input('weight') >= 100){
+        elseif($request->input('weight') >45 && $request->input('weight') <= 100){
             $price = (($request->input('weight')- $initialweight)* 30) + 330;
             $data = $request->session()->get('data');
             $data->fill(['price' => $price]);
@@ -112,22 +112,20 @@ class ParcelController extends Controller
     
     public function paymentMethod(Request $request){        
         $paymentmode = request()->validate([
-            'price' => 'required',
+            'price',
             'payment' => 'required',
         ]);
         $data = $request->session()->get('data');
         $data->fill(['paymentmode' => $paymentmode]);
         $request->session()->put('data',$data);
 
-        // $data = $request->session()->get('data');
-        // Parcel::create($data);
-        // $request->session()->forget('data');
         return redirect()->route('checkout');
     }
     
-    // public function checkoutCreate(){
-    //     return redirect()->route('checkout');
-    // }
+    public function checkout(Request $request){
+        $data = $request->session()->get('data');
+        return redirect()->route('checkout', ['data' => $data]);
+    }
 
     // public function checkoutStore(){
     //     //
