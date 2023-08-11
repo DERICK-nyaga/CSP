@@ -69,7 +69,6 @@ class ParcelController extends Controller
         $price = 0;
         $initialweight = 10;
         $data = $request->session()->get('data');
-        // $weight = $request->input('weight');
         $data->fill(['weight' => $request->input('weight')]);
         $request->session()->put('data',$data);
         if($request->input('weight') >0 && $request->input('weight') <=10){
@@ -115,12 +114,11 @@ class ParcelController extends Controller
     }
 
     public function paymentMethod(Request $request){
-        $payment = $request->input('payment');
         $data = $request->session()->get('data');
-        $data->fill(['payment' => $payment]);
+        $data->fill(['payment' => $request->input('payment')]);
         $request->session()->put('data',$data);
 
-        return redirect()->route('checkout',['payment' => $payment]);
+        return redirect()->route('checkout',['data' => $data]);
     }
 
     public function checkout(Request $request){
