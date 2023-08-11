@@ -43,7 +43,6 @@ class ParcelController extends Controller
             'town' => 'required',
             'PickupStation' => 'required',
             'DeliveryAddress' => 'required',
-
         ]);
 
         if(empty($request->session()->get('data'))){
@@ -70,8 +69,8 @@ class ParcelController extends Controller
         $price = 0;
         $initialweight = 10;
         $data = $request->session()->get('data');
-        $weight = $request->input('weight');
-        $data->fill(['weight' => $weight]);
+        // $weight = $request->input('weight');
+        $data->fill(['weight' => $request->input('weight')]);
         $request->session()->put('data',$data);
         if($request->input('weight') >0 && $request->input('weight') <=10){
             $price += 330;
@@ -141,7 +140,7 @@ class ParcelController extends Controller
      */
     public function show(string $id)
     {
-
+        //
     }
     /**
      * Show the form for editing the specified resource.
