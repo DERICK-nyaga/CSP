@@ -34,7 +34,7 @@ class ParcelController extends Controller
 
     public function userInput(Request $request){
         $validatedData = request()->validate([
-            'user_id',
+            'parcel_id',
             'branch' => 'required',
             'sender' => 'required',
             'SenderContact' => 'required',
@@ -47,8 +47,7 @@ class ParcelController extends Controller
 
         if(empty($request->session()->get('data'))){
             $data = new Parcel();
-            $user_id = auth()->user()->id;
-            $data->fill($validatedData,$user_id);
+            $data->fill($validatedData);
             $request->session()->put('data', $data);
         }
         else{

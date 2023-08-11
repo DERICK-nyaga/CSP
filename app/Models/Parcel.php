@@ -10,6 +10,7 @@ class Parcel extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
+        'parcel_id',
         'companies_id',
         'branch_id',
         'sender',
