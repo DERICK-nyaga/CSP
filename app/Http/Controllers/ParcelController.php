@@ -45,9 +45,11 @@ class ParcelController extends Controller
             'DeliveryAddress' => 'required',
 
         ]);
+
         if(empty($request->session()->get('data'))){
             $data = new Parcel();
-            $data->fill($validatedData);
+            $user_id = auth()->user()->id;
+            $data->fill($validatedData,$user_id);
             $request->session()->put('data', $data);
         }
         else{
@@ -56,33 +58,47 @@ class ParcelController extends Controller
             $request->session()->put('data', $data);
         }
         $data = $request->session()->get('data');
-        return redirect()->route('weightInput');
+        return redirect()->route('weightInput',['data' => $data]);
     }
 
-    public function weightform(){
-        return view('parcels.parcel-weight');
+    public function weightform(Request $request){
+        $data = $request->session()->get('data');
+        return view('parcels.parcel-weight',['data' => $data]);
     }
-    
+
+    // public function storeWeight(Request $request){
+    //     $data = $request->session()->get('data');
+    //     $weight = $request->input('weight');
+    //     $data->fill(['weight' => $weight ]);
+    //     $request->session()->put('data',$data);
+
+    //     return redirect()->route('price',['data' => $data]);
+    // }
     public function calculatePrice(Request $request) {
         $price = 0;
         $initialweight = 10;
         $data = $request->session()->get('data');
+        $weight = $request->input('weight');
+        $data->fill(['weight' => $weight]);
+        $request->session()->put('data',$data);
         if($request->input('weight') >0 && $request->input('weight') <=10){
             $price += 330;
             $data = $request()->session()->get('data');
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('parcel-cost',['price', $price]);
+            return view('parcels.showprice',['price', $price]);
+            // return redirect()->route('parcel-cost',['price', $price]);
        }
         elseif($request->input('weight') >10 && $request->input('weight') <=45){
             $price = (($request->input('weight') - $initialweight)* 20) + 330;
             $data = $request->session()->get('data');
             $data->fill(['price' => $price]);
             $request->session()->put('data',$data);
-            
+
+            // return view('parcels.showprice',['price', $price]);
             return redirect()->route('parcel-cost',['price', $price]);
-            
+
         }
         elseif($request->input('weight') >45 && $request->input('weight') <= 100){
             $price = (($request->input('weight')- $initialweight)* 30) + 330;
@@ -103,28 +119,25 @@ class ParcelController extends Controller
         //     $price = (($weight - $initialweight) * 50) + 499;
         // }
     }
-    
+
     public function cost(Request $request){
         $data = $request->session()->get('data');
-        
         return view('parcels.showprice', ['data' => $data]);
     }
-    
-    public function paymentMethod(Request $request){        
-        $paymentmode = request()->validate([
-            'price',
-            'payment' => 'required',
-        ]);
+
+    public function paymentMethod(Request $request){
+        $payment = $request->input('payment');
         $data = $request->session()->get('data');
-        $data->fill(['paymentmode' => $paymentmode]);
+        $data->fill(['payment' => $payment]);
         $request->session()->put('data',$data);
 
-        return redirect()->route('checkout');
+        return redirect()->route('checkout',['payment' => $payment]);
     }
-    
+
     public function checkout(Request $request){
         $data = $request->session()->get('data');
-        return redirect()->route('checkout', ['data' => $data]);
+        return view('parcels.check-out', ['data' => $data]);
+        // return redirect()->route('checkout', ['data' => $data]);
     }
 
     // public function checkoutStore(){
@@ -133,9 +146,10 @@ class ParcelController extends Controller
     public function store(Request  $request)
     {
         $data = $request->session()->get('data');
-        Parcel::create($data);
+        // Parcel::create($data);
+        $data->save();
         $request->session()->forget('data');
-        return redirect()->route('parcels');
+        return redirect()->route('home');
     }
     /**
      * Display the specified resource.
