@@ -54,10 +54,22 @@ and service pages should not be available
 to calculate the price of a single product and display the
 cost of sending to the user then after its been paid
 change the status into paid and when unpaid set the status
- to be equal to the cost of sendig the parcel
+ to be equal to the cost of sending the parcel
     the cost of the parcel is displayed using the weight
      of the parcel as indicated on the users' sender form
 */
+// the below comment is next in line of implementation once ui/ux and admin dashboards are all set /
+/*
+ -   if payment method is equal to now then send an mpesa push with the amount to be deducted.
+  -  then once the payment has been received update on the payment table the status into paid and also the amount
+    and also store the mpesa message in Json format for future references.
+   - else if the payment method is pay on delivery then save the data and set the payment status into unpaid with the amount
+    of the parcel.
+ -  a parcel must have an expiry date that isset to 10 days if the days pass then extra charges should be applied
+   when the parcel owner comes to pick.
+  - packages of weight greater than 20kg should have a pickup expiry of 5 days else attract a penalty of 50shillings daily.
+
+
 /*
      my seeders
      aboutsseeder
