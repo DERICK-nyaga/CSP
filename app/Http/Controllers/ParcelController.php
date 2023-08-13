@@ -34,7 +34,6 @@ class ParcelController extends Controller
 
     public function userInput(Request $request){
         $validatedData = request()->validate([
-            'parcel_id',
             'branch' => 'required',
             'sender' => 'required',
             'SenderContact' => 'required',
@@ -128,6 +127,8 @@ class ParcelController extends Controller
     public function store(Request  $request)
     {
         $data = $request->session()->get('data');
+        $data->fill(['parcel_id'=>mt_rand(10000,9999999999)]);
+        $request->session()->put('data', $data);
         $data->save();
         $request->session()->forget('data');
         return redirect()->route('home');
