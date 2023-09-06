@@ -33,6 +33,8 @@ Route::get('/myparcels', [ParcelController::class, 'myparcels'])->name('myparcel
 // route for user inputs
 Route::get('/parcel', [ParcelController::class, 'create'])->name('parcels');
 Route::post('/parcel', [ParcelController::class, 'userInput']);
+Route::get('/GoogleMaps',[ParcelController::class, 'GoogleMaps'])->name('GoogleMaps');
+Route::post('/parcel', [ParcelController::class, 'userInput']);
 Route::get('/costing', [ParcelController::class, 'weightform'])->name('weightInput');
 Route::post('/costing', [ParcelController::class, 'calculatePrice']);
 Route::get('/parcel-cost', [ParcelController::class, 'cost'])->name('parcel-cost');
@@ -70,3 +72,5 @@ Route::post('/login',[App\Http\Controllers\Auth\LoginController::class, 'login']
 Route::post('/logout',[App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 Route::get('/register',[App\Http\Controllers\Auth\RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register',[App\Http\Controllers\Auth\RegisterController::class, 'register']);
+// Route::get('/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.request');
+// Route::post('/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');

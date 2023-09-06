@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('callback')->controller(U::class)->group(function () {
+    //Mpesa routes
+    Route::post('receivefunds', 'Completedarajatrans');
+  
+
+});

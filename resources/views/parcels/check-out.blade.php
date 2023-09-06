@@ -14,8 +14,8 @@
             <input type="hidden" name="sender" value="{{ $data->sender }}">
         </div>
         <div class="row">
-            <label for="inputPassword4" class="form-label">Mobile number:{{ $data->SenderContact }}</label>
-            <input type="hidden" name="SenderContact" value="{{ $data->SenderContact }}">
+            <label for="inputPassword4" class="form-label">Mobile number:{{ $data->phoneNumber }}</label>
+            <input type="hidden" name="phoneNumber" value="{{ $data->phoneNumber }}">
         </div>
         <div class="row">
             <label for="inputAddress" class="form-label">Receipient Name:{{ $data->receipient }}</label>
@@ -46,8 +46,8 @@
             <input type="hidden" name="weight" value="{{ $data->weight }}">
         </div>
         <div class="row">
-            <h2 class="text-center">You will pay{{ $data->price }}</h2>
-            <input type="hidden" name="price" value="{{ $data->price }}">
+            <h2 class="text-center">You will pay{{ $data->amount }}</h2>
+            <input type="hidden" name="amount" value="{{ $data->amount }}">
         </div>
         <div class="row">
             <label for="payment" class="form-label">Payment-type:{{ $data->payment }}</label>

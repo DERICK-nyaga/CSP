@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('companies_id');
-            $table->string('service1');
-            $table->string('service2');
-            $table->string('service3');
-            $table->string('service4');
-            $table->string('service5');
-            $table->string('service6');
-            $table->string('service7');
-            $table->string('service8');
-            $table->string('service9');
-            $table->string('service10');
+            $table->unsignedInteger('companies_id')->nullable();
+            $table->string('service1')->nullable();
+            $table->string('service2')->nullable();
+            $table->string('service3')->nullable();
+            $table->string('service4')->nullable();
+            $table->string('service5')->nullable();
+            $table->string('service6')->nullable();
+            $table->string('service7')->nullable();
+            $table->string('service8')->nullable();
+            $table->string('service9')->nullable();
+            $table->string('service10')->nullable();
             $table->timestamps();
             // $table->foreign('companies_id')
             // ->references('id')

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-// use Validator;
+// use Validator;C:\Users\Colonel\MyDev\CSP\app\Http
 
 class UsersController extends Controller
 {
@@ -51,10 +51,10 @@ class UsersController extends Controller
         $validator = Validator::make($request->all(),[
             'fname' => 'required|min:2|max:100',
             'lname' => 'required|min:2|max:100',
-            'username' => 'required|min:2|max:100',
+            'username' => 'required|min:2|max:100|unique:users',
             'email'=> 'required|email|max:150|unique:users',
             'mobile'=> 'required',
-            'password' => 'required|min:6|max:16',
+            'password' => 'required|min:6|max:16|confirmed',
             'cpassword' => 'required|same:password',
         ]);
 
@@ -67,7 +67,7 @@ class UsersController extends Controller
             'password' => Hash::make($request->newPassword),
     ]);
         auth()->login($user);
-        return redirect()->route('login')->with('success', 'Account was successfully created');
+        return redirect()->route('login')->with('Success', 'Account was successfully created');
     }
 
     /**

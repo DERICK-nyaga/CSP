@@ -7,11 +7,19 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Branches;
 use App\Models\Company;
+use App\Models\MpesaTransactions;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
+
 class ParcelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('users/index');
@@ -19,6 +27,8 @@ class ParcelController extends Controller
     public function myparcels(){
         $myparcels = DB::table('parcels')->get();
         return view('users/myparcels', ['myparcels' => $myparcels]);
+        // in the view add a function to count the total parcels
+        // $user->parcels-count();
      }
     /**
      * Show the form for creating a new resource.
@@ -36,7 +46,7 @@ class ParcelController extends Controller
         $validatedData = request()->validate([
             'branch' => 'required',
             'sender' => 'required',
-            'SenderContact' => 'required',
+            'phoneNumber' => 'required',
             'receipient' => 'required',
             'ReceipientContact' => 'required',
             'town' => 'required',
@@ -58,41 +68,45 @@ class ParcelController extends Controller
         return redirect()->route('weightInput',['data' => $data]);
     }
 
+    public function GoogleMaps(){
+        return view('parcels.GoogleMaps');
+    }
+
     public function weightform(Request $request){
         $data = $request->session()->get('data');
         return view('parcels.parcel-weight',['data' => $data]);
     }
 
     public function calculatePrice(Request $request) {
-        $price = 0;
+        $amount = 0;
         $initialweight = 10;
         $data = $request->session()->get('data');
         $data->fill(['weight' => $request->input('weight')]);
         $request->session()->put('data',$data);
         if($request->input('weight') >0 && $request->input('weight') <=10){
-            $price += 330;
+            $amount += 330;
             $data = $request()->session()->get('data');
-            $data->fill(['price' => $price]);
+            $data->fill(['amount' => $amount]);
             $request->session()->put('data',$data);
 
-            return view('parcels.showprice',['price', $price]);
+            return view('parcels.showprice',['amount', $amount]);
        }
         elseif($request->input('weight') >10 && $request->input('weight') <=45){
-            $price = (($request->input('weight') - $initialweight)* 20) + 330;
+            $amount = (($request->input('weight') - $initialweight)* 20) + 330;
             $data = $request->session()->get('data');
-            $data->fill(['price' => $price]);
+            $data->fill(['amount' => $amount]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('parcel-cost',['price', $price]);
+            return redirect()->route('parcel-cost',['amount', $amount]);
 
         }
         elseif($request->input('weight') >45 && $request->input('weight') <= 100){
-            $price = (($request->input('weight')- $initialweight)* 30) + 330;
+            $amount = (($request->input('weight')- $initialweight)* 30) + 330;
             $data = $request->session()->get('data');
-            $data->fill(['price' => $price]);
+            $data->fill(['amount' => $amount]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('parcel-cost',['price', $price]);
+            return redirect()->route('parcel-cost',['amount', $amount]);
         }
         elseif($request->input('weight') >100){
             return redirect()->back();
@@ -114,10 +128,58 @@ class ParcelController extends Controller
     public function paymentMethod(Request $request){
         $data = $request->session()->get('data');
         $data->fill(['payment' => $request->input('payment')]);
-        $request->session()->put('data',$data);
+        if($request->input('payment') == 'mpesa'){
+            $this->Sendstkpush($data->amount,$data->phoneNumber,$data->parcel_id);
+            return redirect()->route('checkout');
 
-        return redirect()->route('checkout',['data' => $data]);
+        }
+        else{
+            $request->session()->put('data',$data);
+
+            return redirect()->route('checkout',['data' => $data]);
+        }
+
     }
+
+    public function Sendstkpush($amount, $phoneNumber, $parcel_id)
+    {
+
+        $combined = env('DARAJA_CONSUMER_KEY') . ':' . env('DARAJA_CONSUMER_SECRET');
+        Log::info($combined);
+        $credentials = base64_encode($combined);
+        $accessToken = Http::withHeaders(['Authorization' => 'Basic ' . $credentials])
+            ->get('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials')
+            ->json('access_token');
+
+        $mpesaOnlineShortcode = "174379";
+        $BusinessShortCode = $mpesaOnlineShortcode;
+        $mpesaOnlinePasskey = env('MPESAONLINEPASS');
+        date_default_timezone_set('Africa/Nairobi');
+        $timestamp =  date('YmdHis');
+        $dataToEncode = $BusinessShortCode . $mpesaOnlinePasskey . $timestamp;
+        $password = base64_encode($dataToEncode);
+
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . $accessToken
+        ])->post('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest', [
+            'BusinessShortCode' => $BusinessShortCode,
+            'Password' => $password,
+            'Timestamp' => $timestamp,
+            'TransactionType' => 'CustomerPayBillOnline',
+            'Amount' => $amount,
+            'PartyA' => $phoneNumber,
+            'PartyB' => $BusinessShortCode,
+            'PhoneNumber' => $phoneNumber,
+            'CallBackURL' => 'https://4265-154-122-149-3.ngrok-free.app/callback/receivefunds?token=derick',
+            'AccountReference' => 'SYCOMMERCE',
+            'TransactionDesc' => 'PAYING ORDER AMOUNT FOR SYMACOMMERCE'
+        ])->json();
+        Log::info($response);
+
+        return $response['ResponseCode'] === 0;
+    }
+
 
     public function checkout(Request $request){
         $data = $request->session()->get('data');

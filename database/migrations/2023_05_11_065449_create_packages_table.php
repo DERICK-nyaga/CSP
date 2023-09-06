@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('parcel_id');
-            $table->string('address_name');
+            $table->unsignedInteger('parcel_id')->nullable();
+            $table->string('address_name')->nullable();
             $table->timestamps();
         });
     }

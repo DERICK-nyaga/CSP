@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('price_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('branch_id');
+            $table->unsignedInteger('branch_id')->nullable();
             $table->timestamps();
-            $table->foreign('branch_id')
-            ->references('id')
-            ->on('branches')
-            ->onDelete('cascade');
+            // $table->foreign('branch_id')
+            // ->references('id')
+            // ->on('branches')
+            // ->onDelete('cascade');
         });
     }
 

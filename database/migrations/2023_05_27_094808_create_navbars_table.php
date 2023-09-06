@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('navbars', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('route');
-            $table->integer('ordering')->default(0);
+            $table->string('name')->nullable();
+            $table->string('route')->nullable();
+            $table->integer('ordering')->default(0)->nullable();
             $table->timestamps();
         });
     }

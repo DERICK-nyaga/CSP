@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('companies_id');
-            $table->string('branchname');
+            $table->unsignedInteger('companies_id')->nullable();
+            $table->string('branchname')->nullable();
             $table->timestamps();
-            $table->foreign('companies_id')
-            ->references('id')
-            ->on('companies')
-            ->onDelete('cascade');
+            // $table->foreign('companies_id')
+            // ->references('id')
+            // ->on('companies')
+            // ->onDelete('cascade');
         });
     }
 

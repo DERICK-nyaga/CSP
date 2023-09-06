@@ -17,7 +17,7 @@
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Mobile number:</label>
-    <input type="text" name="SenderContact" class="form-control " id="inputPassword4" placeholder="Your current mobile number">
+    <input type="text" name="phoneNumber" class="form-control " id="inputPassword4" placeholder="Your current mobile number">
   </div>
   <div class="col-6">
     <label for="inputAddress" class="form-label">Receipient Name:</label>
@@ -41,7 +41,7 @@
   </div>
 
 <div class="col-md-6">
-    <label for="town" class="form-label">Select a Town Near You:</label>
+    {{-- <a href="{{ route('GoogleMaps') }}"><label for="town" class="form-label">Share dropoff Location:</label></a> --}}
     <select name="branch" class="form-select form-control" aria-label="Default select example">
         <option selected>Select your Current Town</option>
     @foreach($branches as $key => $branch)

@@ -14,7 +14,7 @@ class Parcel extends Model
         'companies_id',
         'branch_id',
         'sender',
-        'SenderContact',
+        'phoneNumber',
         'receipient',
         'ReceipientContact',
         'town',
@@ -22,7 +22,7 @@ class Parcel extends Model
         'PickupStation',
         'DeliveryAddress',
         'payment',
-        'price',
+        'amount',
     ];
     public function branches(){
         return $this->belongsTo(Branches::class);
