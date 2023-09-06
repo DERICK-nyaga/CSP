@@ -46,7 +46,7 @@
             <input type="hidden" name="weight" value="{{ $data->weight }}">
         </div>
         <div class="row">
-            <h2 class="text-center">You will pay{{ $data->amount }}</h2>
+            <h2 class="text-center">Your Paid {{ $data->amount }} to DNGC</h2>
             <input type="hidden" name="amount" value="{{ $data->amount }}">
         </div>
         <div class="row">

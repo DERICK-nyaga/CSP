@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Models\Parcel;
 use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
 use App\Models\Branches;
 use App\Models\Company;
@@ -85,11 +87,11 @@ class ParcelController extends Controller
         $request->session()->put('data',$data);
         if($request->input('weight') >0 && $request->input('weight') <=10){
             $amount += 330;
-            $data = $request()->session()->get('data');
+            $data = $request->session()->get('data');
             $data->fill(['amount' => $amount]);
             $request->session()->put('data',$data);
 
-            return view('parcels.showprice',['amount', $amount]);
+            return view('parcels.showprice',['data' => $data]);
        }
         elseif($request->input('weight') >10 && $request->input('weight') <=45){
             $amount = (($request->input('weight') - $initialweight)* 20) + 330;
@@ -97,7 +99,7 @@ class ParcelController extends Controller
             $data->fill(['amount' => $amount]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('parcel-cost',['amount', $amount]);
+            return redirect()->route('parcel-cost',['data' => $data]);
 
         }
         elseif($request->input('weight') >45 && $request->input('weight') <= 100){
@@ -106,7 +108,7 @@ class ParcelController extends Controller
             $data->fill(['amount' => $amount]);
             $request->session()->put('data',$data);
 
-            return redirect()->route('parcel-cost',['amount', $amount]);
+            return redirect()->route('parcel-cost',['data' => $data]);
         }
         elseif($request->input('weight') >100){
             return redirect()->back();
@@ -172,7 +174,7 @@ class ParcelController extends Controller
             'PartyB' => $BusinessShortCode,
             'PhoneNumber' => $phoneNumber,
             'CallBackURL' => 'https://4265-154-122-149-3.ngrok-free.app/callback/receivefunds?token=derick',
-            'AccountReference' => 'SYCOMMERCE',
+            'AccountReference' => 'DNGC',
             'TransactionDesc' => 'PAYING ORDER AMOUNT FOR SYMACOMMERCE'
         ])->json();
         Log::info($response);
