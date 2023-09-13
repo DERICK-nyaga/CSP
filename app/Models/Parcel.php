@@ -32,4 +32,6 @@ class Parcel extends Model
     public function user(){
         return $this->belongsTo(Users::class);
     }
+    public function parcels(){
+        return $this->hasMany(Parcel::class);
 }
