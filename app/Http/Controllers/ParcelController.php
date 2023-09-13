@@ -29,7 +29,7 @@ class ParcelController extends Controller
         $myparcels = DB::table('parcels')->get();
         return view('users/myparcels', ['myparcels' => $myparcels]);
         // in the view add a function to count the total parcels
-        // $user->parcels-count();
+        // $user->parcels->count();
      }
     /**
      * Show the form for creating a new resource.
