@@ -37,7 +37,7 @@ class MpesaController extends Controller
         $PhoneNumber = $data['Body']['stkCallback']['CallbackMetadata']['Item'][4]['Value'];
 
         //if the amount paid matches the orderamount required
-        if ($Amount == $parcel->totalamount) {
+        if ($Amount == $parcel->amount) {
             $parcel->orderstatus = 'intransit';
             $parcel->paymentstatus = 'paid';
             $parcel->save();
