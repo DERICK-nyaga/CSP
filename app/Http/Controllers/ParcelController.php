@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Session;
 use App\Models\Parcel;
 use Illuminate\Support\Facades\DB;
-// use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
 use App\Models\Branches;
 use App\Models\Company;
