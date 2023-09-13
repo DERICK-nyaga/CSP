@@ -38,7 +38,7 @@ class MpesaController extends Controller
 
         //if the amount paid matches the orderamount required
         if ($Amount == $parcel->amount) {
-            $parcel->orderstatus = 'intransit';
+            $parcel->status = 'intransit';
             $parcel->paymentstatus = 'paid';
             $parcel->save();
         }
