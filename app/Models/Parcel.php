@@ -23,6 +23,7 @@ class Parcel extends Model
         'DeliveryAddress',
         'payment',
         'amount',
+        'status',
     ];
     public function branches(){
         return $this->belongsTo(Branches::class);
